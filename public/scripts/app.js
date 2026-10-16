@@ -705,6 +705,159 @@
     }
   };
 
+  const parentCaregiverTranslations = {
+    en: {
+      title: 'How to Use the NYC Reads Curriculum Finder',
+      intro: 'If you are a parent or caregiver, look up your child’s grade and see what they are learning about. You can:',
+      tips: [
+        'Read a book together on that topic using Sora (NYCPS’s digital library)',
+        'Ask questions about the topic like, “What did you learn?” “What do you want to know more about?”',
+        'Talk about the topic during your day (for example, notice plants on a walk if they are learning about trees)',
+        'Find ways to learn more (watch a short video, visit the library, or look at pictures together)',
+      ],
+      readingIntro: 'The NYCPS Office of Library Services made these reading lists to help you support your child’s learning and interests. These are not the exact books your child reads in school, but they are great books to keep learning and reading, continuing at home. The books were chosen to match what students are learning, their interests, and to show many different people and experiences.',
+      readingLinks: 'The links take you to the Citywide Digital Library on {{sora}}, NYCPS’s digital collection. Every NYC Public Schools student has free access to the Citywide Digital Library on Sora. It has eBooks, audiobooks, comics, and magazines for all students from Pre-K to 12th grade. If you have questions about logging into Sora, click here for {{prek}} or {{grades}}. You can also find many of these books at the New York Public Library (NYPL), Brooklyn Public Library (BPL), or Queens Public Library (QPL).',
+      sora: 'Sora',
+      prek: 'Pre-K–3',
+      grades: 'Grades 4–12',
+    },
+    es: {
+      title: 'Como usar el Buscador de Curriculo NYC Reads',
+      intro: 'Si eres padre, madre o cuidador, busca el grado de tu hijo y mira lo que esta aprendiendo. Puedes:',
+      tips: [
+        'Leer juntos un libro sobre ese tema usando Sora (la biblioteca digital de NYCPS)',
+        'Hacer preguntas sobre el tema como "¿Que aprendiste?" o "¿Que quieres saber mas?"',
+        'Hablar del tema durante el dia',
+        'Buscar maneras de aprender mas, como un video corto, una visita a la biblioteca o mirar imagenes juntos',
+      ],
+      readingIntro: 'La Oficina de Servicios Bibliotecarios de NYCPS preparo estas listas de lectura para ayudarte a apoyar el aprendizaje y los intereses de tu hijo. No son exactamente los libros que tu hijo lee en la escuela, pero son excelentes libros para seguir aprendiendo y leyendo en casa. Los libros fueron elegidos para conectar con lo que estudian los estudiantes, sus intereses y una variedad de personas y experiencias.',
+      readingLinks: 'Los enlaces te llevan a la Biblioteca Digital de la Ciudad en {{sora}}, la coleccion digital de NYCPS. Cada estudiante de las Escuelas Publicas de NYC tiene acceso gratuito a la Biblioteca Digital de la Ciudad en Sora. Incluye libros electronicos, audiolibros, comics y revistas para estudiantes desde Pre-K hasta 12 grado. Si tienes preguntas sobre como iniciar sesion en Sora, haz clic aqui para {{prek}} o {{grades}}. Tambien puedes encontrar muchos de estos libros en la Biblioteca Publica de Nueva York (NYPL), la Biblioteca Publica de Brooklyn (BPL) o la Biblioteca Publica de Queens (QPL).',
+      sora: 'Sora',
+      prek: 'Pre-K–3',
+      grades: 'Grados 4–12',
+    },
+    ar: {
+      title: 'كيفية استخدام أداة البحث عن مناهج NYC Reads',
+      intro: 'إذا كنت والدًا أو مقدم رعاية، فابحث عن صف طفلك وتعرّف على ما يتعلمه. يمكنك:',
+      tips: [
+        'قراءة كتاب معًا عن هذا الموضوع باستخدام Sora (المكتبة الرقمية لـ NYCPS)',
+        'طرح أسئلة عن الموضوع، مثل: «ماذا تعلمت؟» و«ما الذي تريد معرفة المزيد عنه؟»',
+        'التحدث عن الموضوع خلال يومكما (مثل ملاحظة النباتات أثناء المشي إذا كان طفلك يتعلم عن الأشجار)',
+        'البحث عن طرق لمعرفة المزيد (مشاهدة فيديو قصير، أو زيارة المكتبة، أو مشاهدة الصور معًا)',
+      ],
+      readingIntro: 'أعدّ مكتب خدمات المكتبات في NYCPS قوائم القراءة هذه لمساعدتك على دعم تعلّم طفلك واهتماماته. هذه ليست الكتب نفسها التي يقرأها طفلك في المدرسة، لكنها كتب رائعة لمواصلة التعلّم والقراءة في المنزل. اختيرت الكتب لتتوافق مع ما يتعلمه الطلاب واهتماماتهم، ولتعرّفهم على أشخاص وتجارب متنوعة.',
+      readingLinks: 'تنقلك الروابط إلى المكتبة الرقمية على {{sora}}، وهي المجموعة الرقمية لـ NYCPS. يستطيع جميع طلاب مدارس مدينة نيويورك استخدام المكتبة الرقمية مجانًا. تضم كتبًا إلكترونية وكتبًا صوتية وقصصًا مصورة ومجلات لطلاب ما قبل الروضة حتى الصف الثاني عشر. إذا كانت لديك أسئلة عن تسجيل الدخول إلى Sora، فاضغط هنا للاطلاع على إرشادات {{prek}} أو {{grades}}. ويمكنك أيضًا العثور على كثير من هذه الكتب في مكتبة نيويورك العامة (NYPL)، أو مكتبة بروكلين العامة (BPL)، أو مكتبة كوينز العامة (QPL).',
+      sora: 'Sora',
+      prek: 'ما قبل الروضة–الصف 3',
+      grades: 'الصفوف 4–12',
+    },
+    bn: {
+      title: 'NYC Reads কারিকুলাম ফাইন্ডার কীভাবে ব্যবহার করবেন',
+      intro: 'আপনি যদি অভিভাবক বা পরিচর্যাকারী হন, তাহলে আপনার সন্তানের শ্রেণি খুঁজে দেখুন এবং সে কী শিখছে জানুন। আপনি যা করতে পারেন:',
+      tips: [
+        'Sora (NYCPS-এর ডিজিটাল লাইব্রেরি) ব্যবহার করে সেই বিষয়ের একটি বই একসঙ্গে পড়ুন',
+        'বিষয়টি নিয়ে প্রশ্ন করুন, যেমন, “তুমি কী শিখেছ?” বা “আর কী জানতে চাও?”',
+        'দিনের বিভিন্ন সময়ে বিষয়টি নিয়ে কথা বলুন (যেমন, গাছ সম্পর্কে শিখলে হাঁটার সময় গাছপালা লক্ষ্য করুন)',
+        'আরও জানার উপায় খুঁজুন (ছোট ভিডিও দেখুন, লাইব্রেরিতে যান, বা একসঙ্গে ছবি দেখুন)',
+      ],
+      readingIntro: 'আপনার সন্তানের শেখা ও আগ্রহকে সহায়তা করতে NYCPS-এর লাইব্রেরি সার্ভিসেস অফিস এই পড়ার তালিকাগুলো তৈরি করেছে। এগুলো স্কুলে আপনার সন্তান যে বইগুলো পড়ে ঠিক সেগুলো নয়, তবে বাড়িতে শেখা ও পড়া চালিয়ে যাওয়ার জন্য দারুণ বই। শিক্ষার্থীরা যা শিখছে ও যেসব বিষয়ে আগ্রহী, সেগুলোর সঙ্গে মিল রেখে এবং নানা মানুষ ও অভিজ্ঞতার পরিচয় করিয়ে দিতে বইগুলো বেছে নেওয়া হয়েছে।',
+      readingLinks: 'লিংকগুলো আপনাকে NYCPS-এর ডিজিটাল সংগ্রহ, সিটির ডিজিটাল লাইব্রেরি {{sora}}-তে নিয়ে যাবে। NYC পাবলিক স্কুলের প্রত্যেক শিক্ষার্থী বিনামূল্যে Sora-র এই লাইব্রেরি ব্যবহার করতে পারে। এতে প্রি-কে থেকে দ্বাদশ শ্রেণির শিক্ষার্থীদের জন্য ই-বুক, অডিওবুক, কমিক ও ম্যাগাজিন রয়েছে। Sora-তে লগ ইন করার বিষয়ে প্রশ্ন থাকলে এখানে ক্লিক করে {{prek}} বা {{grades}} নির্দেশিকা দেখুন। এই বইগুলোর অনেকগুলো নিউ ইয়র্ক পাবলিক লাইব্রেরি (NYPL), ব্রুকলিন পাবলিক লাইব্রেরি (BPL), অথবা কুইন্স পাবলিক লাইব্রেরিতেও (QPL) পাওয়া যায়।',
+      sora: 'Sora',
+      prek: 'প্রি-কে–৩',
+      grades: '৪–১২ শ্রেণি',
+    },
+    fr: {
+      title: 'Comment utiliser le moteur de recherche du programme NYC Reads',
+      intro: 'Si vous êtes parent ou responsable, recherchez le niveau scolaire de votre enfant pour découvrir ce qu’il apprend. Vous pouvez :',
+      tips: [
+        'Lire ensemble un livre sur ce sujet avec Sora (la bibliothèque numérique de NYCPS)',
+        'Poser des questions sur le sujet, comme « Qu’as-tu appris ? » ou « Qu’aimerais-tu découvrir de plus ? »',
+        'Parler du sujet au fil de la journée (par exemple, observer les plantes en promenade si votre enfant étudie les arbres)',
+        'Trouver des façons d’en apprendre davantage (regarder une courte vidéo, aller à la bibliothèque ou regarder des images ensemble)',
+      ],
+      readingIntro: 'Le Bureau des services de bibliothèque de NYCPS a préparé ces listes de lecture pour vous aider à soutenir les apprentissages et les centres d’intérêt de votre enfant. Il ne s’agit pas exactement des livres lus par votre enfant à l’école, mais de bons ouvrages pour continuer à apprendre et à lire à la maison. Ces livres ont été choisis en lien avec les apprentissages et les intérêts des élèves, et pour leur faire découvrir des personnes et des expériences variées.',
+      readingLinks: 'Les liens vous dirigent vers la bibliothèque numérique de la ville sur {{sora}}, la collection numérique de NYCPS. Tous les élèves des écoles publiques de New York peuvent accéder gratuitement à cette bibliothèque. Elle propose des livres numériques, des livres audio, des bandes dessinées et des magazines pour les élèves de la pré-maternelle à la 12e année. Si vous avez des questions sur la connexion à Sora, cliquez ici pour consulter les guides {{prek}} ou {{grades}}. Vous trouverez également beaucoup de ces livres à la New York Public Library (NYPL), à la Brooklyn Public Library (BPL) ou à la Queens Public Library (QPL).',
+      sora: 'Sora',
+      prek: 'pré-maternelle–3e année',
+      grades: '4e–12e année',
+    },
+    ht: {
+      title: 'Kijan pou itilize zouti pou jwenn kourikoulòm NYC Reads la',
+      intro: 'Si ou se paran oswa moun k ap pran swen yon timoun, chèche nivo klas pitit ou a pou wè sa l ap aprann. Men sa ou ka fè:',
+      tips: [
+        'Li yon liv ansanm sou sijè a avèk Sora (bibliyotèk dijital NYCPS la)',
+        'Poze kesyon sou sijè a, tankou “Kisa ou te aprann?” oswa “Kisa ou ta renmen konnen plis?”',
+        'Pale sou sijè a pandan jounen an (pa egzanp, remake plant yo pandan yon ti mache si y ap aprann sou pyebwa)',
+        'Chèche lòt fason pou aprann plis (gade yon ti videyo, vizite bibliyotèk la, oswa gade foto ansanm)',
+      ],
+      readingIntro: 'Biwo Sèvis Bibliyotèk NYCPS la prepare lis lekti sa yo pou ede w soutni aprantisaj ak enterè pitit ou. Se pa egzakteman liv pitit ou li lekòl, men se bon liv pou kontinye aprann ak li lakay. Yo chwazi liv yo selon sa elèv yo ap aprann ak enterè yo, epi pou montre divès kalite moun ak eksperyans.',
+      readingLinks: 'Lyen yo mennen w nan Bibliyotèk Dijital Vil la sou {{sora}}, koleksyon dijital NYCPS la. Tout elèv Lekòl Piblik Vil Nouyòk yo gen aksè gratis nan bibliyotèk dijital Sora a. Li gen liv elektwonik, liv odyo, komik ak magazin pou elèv depi pre-matènèl rive nan 12yèm ane. Si w gen kesyon sou fason pou konekte sou Sora, klike la a pou gid {{prek}} oswa {{grades}}. Ou ka jwenn anpil nan liv sa yo tou nan New York Public Library (NYPL), Brooklyn Public Library (BPL), oswa Queens Public Library (QPL).',
+      sora: 'Sora',
+      prek: 'Pre-K–3',
+      grades: '4yèm–12yèm ane',
+    },
+    ko: {
+      title: 'NYC Reads 교육과정 찾기 도구 사용 방법',
+      intro: '부모님이나 보호자라면 자녀의 학년을 찾아 무엇을 배우고 있는지 확인해 보세요. 다음과 같이 활용할 수 있습니다.',
+      tips: [
+        'Sora(NYCPS 디지털 도서관)에서 해당 주제의 책을 함께 읽기',
+        '“무엇을 배웠니?” 또는 “더 알고 싶은 것은 무엇이니?”와 같이 주제에 대해 질문하기',
+        '하루 중 주제에 관해 이야기하기 (예: 나무를 배우고 있다면 산책하며 식물을 살펴보기)',
+        '더 알아볼 방법 찾기 (짧은 영상 보기, 도서관 방문하기, 함께 사진 보기)',
+      ],
+      readingIntro: 'NYCPS 도서관 서비스 사무국은 자녀의 학습과 관심사를 지원하기 위해 이 독서 목록을 만들었습니다. 자녀가 학교에서 실제로 읽는 책과 정확히 같지는 않지만, 집에서도 계속 배우고 읽을 수 있는 좋은 책들입니다. 학생들이 배우는 내용과 관심사에 맞고 다양한 사람과 경험을 보여 주는 책을 골랐습니다.',
+      readingLinks: '링크를 누르면 NYCPS의 디지털 자료실인 시립 디지털 도서관 {{sora}}로 이동합니다. 뉴욕시 공립학교 학생은 누구나 Sora의 디지털 도서관을 무료로 이용할 수 있습니다. 유치원 전 과정부터 12학년까지 학생을 위한 전자책, 오디오북, 만화, 잡지가 있습니다. Sora 로그인에 대해 궁금한 점이 있으면 여기를 눌러 {{prek}} 또는 {{grades}} 안내를 확인하세요. 이 책 중 상당수는 뉴욕 공립 도서관(NYPL), 브루클린 공립 도서관(BPL), 퀸스 공립 도서관(QPL)에서도 찾을 수 있습니다.',
+      sora: 'Sora',
+      prek: 'Pre-K–3학년',
+      grades: '4–12학년',
+    },
+    zh: {
+      title: '如何使用 NYC Reads 课程查询工具',
+      intro: '如果您是家长或照护者，可以查询孩子的年级，了解他们正在学习什么。您可以：',
+      tips: [
+        '使用 Sora（NYCPS 数字图书馆）一起阅读一本相关主题的书',
+        '围绕主题提问，例如“你学到了什么？”或“你还想了解什么？”',
+        '在日常生活中聊聊这个主题（例如，孩子学习树木时，散步时一起观察植物）',
+        '寻找进一步学习的方法（看一段短视频、去图书馆，或一起看图片）',
+      ],
+      readingIntro: 'NYCPS 图书馆服务办公室制作了这些阅读清单，帮助您支持孩子的学习和兴趣。这些并非孩子在学校实际阅读的书目，但都是适合在家继续学习和阅读的好书。选书参考了学生的学习内容和兴趣，也展现了不同的人物与经历。',
+      readingLinks: '这些链接会带您前往 NYCPS 的数字馆藏——市级数字图书馆 {{sora}}。每位纽约市公立学校学生都可以免费使用 Sora 数字图书馆。馆内为学前班至 12 年级学生提供电子书、有声书、漫画和杂志。如果您对登录 Sora 有疑问，请点击此处查看{{prek}}或{{grades}}指南。您也可以在纽约公共图书馆 (NYPL)、布鲁克林公共图书馆 (BPL) 或皇后区公共图书馆 (QPL) 找到其中许多书籍。',
+      sora: 'Sora',
+      prek: '学前班–3 年级',
+      grades: '4–12 年级',
+    },
+    ru: {
+      title: 'Как пользоваться поиском учебной программы NYC Reads',
+      intro: 'Если вы родитель или опекун, найдите класс своего ребёнка, чтобы узнать, что он изучает. Вы можете:',
+      tips: [
+        'Вместе прочитать книгу по этой теме в Sora (цифровой библиотеке NYCPS)',
+        'Задавать вопросы по теме, например: «Что ты узнал?» или «Что тебе хотелось бы узнать ещё?»',
+        'Обсуждать тему в течение дня (например, рассматривать растения на прогулке, если ребёнок изучает деревья)',
+        'Найти способы узнать больше (посмотреть короткое видео, сходить в библиотеку или вместе рассмотреть картинки)',
+      ],
+      readingIntro: 'Отдел библиотечных услуг NYCPS составил эти списки книг, чтобы помочь вам поддержать обучение и интересы ребёнка. Это не те же самые книги, которые ребёнок читает в школе, а хорошие книги, которые помогут продолжать учиться и читать дома. Книги выбраны с учётом того, что изучают ученики, их интересов, а также разнообразия людей и жизненного опыта.',
+      readingLinks: 'Ссылки ведут в городскую цифровую библиотеку {{sora}} — цифровую коллекцию NYCPS. Все ученики государственных школ Нью-Йорка могут бесплатно пользоваться библиотекой Sora. В ней есть электронные и аудиокниги, комиксы и журналы для учеников от дошкольного возраста до 12-го класса. Если у вас есть вопросы о входе в Sora, нажмите здесь, чтобы открыть инструкции для {{prek}} или {{grades}}. Многие из этих книг также можно найти в Нью-Йоркской публичной библиотеке (NYPL), Публичной библиотеке Бруклина (BPL) или Публичной библиотеке Куинса (QPL).',
+      sora: 'Sora',
+      prek: 'дошкольного возраста–3-го класса',
+      grades: '4–12-го классов',
+    },
+    ur: {
+      title: 'NYC Reads نصاب تلاش کا استعمال کیسے کریں',
+      intro: 'اگر آپ والدین یا نگہداشت کرنے والے ہیں تو اپنے بچے کی جماعت تلاش کریں اور دیکھیں کہ وہ کیا سیکھ رہا ہے۔ آپ یہ کر سکتے ہیں:',
+      tips: [
+        'Sora (NYCPS کی ڈیجیٹل لائبریری) میں اس موضوع پر کوئی کتاب مل کر پڑھیں',
+        'موضوع کے بارے میں سوال کریں، مثلاً: “تم نے کیا سیکھا؟” یا “تم مزید کیا جاننا چاہتے ہو؟”',
+        'دن کے دوران اس موضوع پر بات کریں (مثلاً اگر بچہ درختوں کے بارے میں سیکھ رہا ہو تو چہل قدمی کے دوران پودوں کو دیکھیں)',
+        'مزید سیکھنے کے طریقے تلاش کریں (مختصر ویڈیو دیکھیں، لائبریری جائیں، یا مل کر تصویریں دیکھیں)',
+      ],
+      readingIntro: 'NYCPS کے دفترِ لائبریری سروسز نے یہ مطالعاتی فہرستیں آپ کے بچے کے سیکھنے اور دلچسپیوں میں مدد کے لیے تیار کی ہیں۔ یہ لازماً وہی کتابیں نہیں جو آپ کا بچہ اسکول میں پڑھتا ہے، بلکہ گھر پر سیکھنے اور پڑھنے کا سلسلہ جاری رکھنے کے لیے اچھی کتابیں ہیں۔ کتابوں کا انتخاب طلبہ کی تعلیم، دلچسپیوں اور مختلف لوگوں اور تجربات کی نمائندگی کو مدنظر رکھ کر کیا گیا ہے۔',
+      readingLinks: 'یہ روابط آپ کو NYCPS کے ڈیجیٹل ذخیرے، سٹی وائیڈ ڈیجیٹل لائبریری {{sora}}، تک لے جاتے ہیں۔ نیویارک کے سرکاری اسکولوں کے ہر طالب علم کو Sora کی ڈیجیٹل لائبریری مفت دستیاب ہے۔ اس میں پری کنڈرگارٹن سے 12ویں جماعت تک کے طلبہ کے لیے ای بکس، آڈیو بکس، کامکس اور رسالے شامل ہیں۔ اگر Sora میں لاگ اِن کرنے کے بارے میں سوال ہو تو یہاں کلک کرکے {{prek}} یا {{grades}} کی رہنمائی دیکھیں۔ ان میں سے بہت سی کتابیں نیویارک پبلک لائبریری (NYPL)، بروکلین پبلک لائبریری (BPL)، یا کوئنز پبلک لائبریری (QPL) میں بھی مل سکتی ہیں۔',
+      sora: 'Sora',
+      prek: 'پری-کے–3',
+      grades: 'جماعتیں 4–12',
+    },
+  };
+
   function t(key) {
     const lang = state.selectedLanguage || 'en';
     return (translations[lang] && translations[lang][key]) || translations.en[key] || key;
@@ -1107,6 +1260,20 @@
     return role.indexOf('school leader') !== -1 || role.indexOf('teacher') !== -1;
   }
 
+  function getParentCaregiverTranslation() {
+    return parentCaregiverTranslations[state.selectedLanguage] || parentCaregiverTranslations.en;
+  }
+
+  function renderParentReadingLinks(copy) {
+    const soraLink = '<a href="https://soraapp.com/welcome/login/310229" target="_blank" rel="noopener noreferrer">' + copy.sora + '</a>';
+    const prekLink = '<a href="https://rise.articulate.com/share/fcB-JQs3ozeuQWZHwEw4Az6upNkkYKb-?_gl=1%2Awljhzo%2A_gcl_au%2ANjE5MjA1NTAzLjE3NzU1ODIxMjY.%2A_ga%2AMTA3MTMzNjUzLjE3NzU1ODIxMjA.%2A_ga_J2DYCDLK48%2AczE3NzU1ODIxMjYkbzEkZzEkdDE3NzU1ODIyMjckajYwJGwwJGgw#/lessons/op3g0wQ8oC99f1Rznjn1BW7Q1zG5KrxA" target="_blank" rel="noopener noreferrer">' + copy.prek + '</a>';
+    const gradesLink = '<a href="https://rise.articulate.com/share/fcB-JQs3ozeuQWZHwEw4Az6upNkkYKb-?_gl=1%2A882ek0%2A_gcl_au%2ANjE5MjA1NTAzLjE3NzU1ODIxMjY.%2A_ga%2AMTA3MTMzNjUzLjE3NzU1ODIxMjA.%2A_ga_J2DYCDLK48%2AczE3NzU1ODIzNTkkajYwJGwwJGgw#/lessons/aZ9uCcYTZkMiZcWXAehV5mBBPs6dDadq" target="_blank" rel="noopener noreferrer">' + copy.grades + '</a>';
+    return copy.readingLinks
+      .replace('{{sora}}', soraLink)
+      .replace('{{prek}}', prekLink)
+      .replace('{{grades}}', gradesLink);
+  }
+
   function renderOstUsageBlock() {
     const lang = state.selectedLanguage || 'en';
     if (isSchoolLeaderTeacherRoleSelected()) {
@@ -1121,28 +1288,13 @@
       );
     }
     if (isParentCaregiverRoleSelected()) {
-      const intro = lang === 'es'
-        ? 'Si eres padre, madre o cuidador, busca el grado de tu hijo y mira lo que esta aprendiendo. Puedes:'
-        : 'If you are a parent or caregiver, look up your child’s grade and see what they are learning about. You can:';
-      const items = lang === 'es'
-        ? [
-          'Leer juntos un libro sobre ese tema usando Sora (la biblioteca digital de NYCPS)',
-          'Hacer preguntas sobre el tema como "¿Que aprendiste?" o "¿Que quieres saber mas?"',
-          'Hablar del tema durante el dia',
-          'Buscar maneras de aprender mas, como un video corto, una visita a la biblioteca o mirar imagenes juntos',
-        ]
-        : [
-          'Read a book together on that topic using Sora (NYCPS’s digital library)',
-          'Ask questions about the topic like, “What did you learn?” “What do you want to know more about?”',
-          'Talk about the topic during your day (for example, notice plants on a walk if they are learning about trees)',
-          'Find ways to learn more (watch a short video, visit the library, or look at pictures together)',
-        ];
+      const copy = getParentCaregiverTranslation();
       return (
         '<div class="subcard ost-note-card section">' +
-          '<h3>' + (lang === 'es' ? 'Como usar el Buscador de Curriculo NYC Reads' : 'How to Use the NYC Reads Curriculum Finder') + '</h3>' +
-          '<p>' + intro + '</p>' +
+          '<h3>' + copy.title + '</h3>' +
+          '<p>' + copy.intro + '</p>' +
           '<ul class="role-guidance-list">' +
-            items.map(item => '<li>' + item + '</li>').join('') +
+            copy.tips.map(item => '<li>' + item + '</li>').join('') +
           '</ul>' +
         '</div>'
       );
@@ -1251,7 +1403,7 @@
     }).join('');
     // Recommended Text section removed
 
-    const readingListIntro = isOstRoleSelected()
+    let readingListIntro = isOstRoleSelected()
       ? (
         '<div class="reading-list-intro">' +
           (
@@ -1300,6 +1452,14 @@
           '</div>'
         )
       : '';
+    if (isParentCaregiverRoleSelected()) {
+      const copy = getParentCaregiverTranslation();
+      readingListIntro = '<div class="reading-list-intro">' +
+        copy.readingIntro +
+        '<br><br>' +
+        renderParentReadingLinks(copy) +
+        '</div>';
+    }
     const soraNote = (isOstRoleSelected() || isParentCaregiverRoleSelected() || isSchoolLeaderTeacherRoleSelected())
       ? ''
       : '<div class="sora-note" style="margin-top:8px;font-size:12px;color:#475569;">' +
@@ -1457,21 +1617,26 @@
     const moduleTranslation = mod && mod.translations && mod.translations[state.selectedLanguage]
       ? mod.translations[state.selectedLanguage]
       : {};
+    const activeTranslation = Object.assign({}, localeTranslation, moduleTranslation);
     const dateLabel = (mod && mod.start_md && mod.end_md) ? (mod.start_md + ' – ' + mod.end_md) : '';
+    const activeGenres = Array.isArray(activeTranslation.genres)
+      ? activeTranslation.genres
+      : activeTranslation.text_genres
+        ? activeTranslation.text_genres.split(/[\r\n]+/).map(value => value.trim()).filter(Boolean)
+        : (mod && Array.isArray(mod.genres) ? mod.genres : state.lastDetails.genres || []);
+    const activeBooks = mod && Array.isArray(mod.books) ? mod.books : state.lastDetails.books || [];
     const html = renderResultCard({
       district: ctx.district,
       school: ctx.school,
       grade: ctx.grade,
       curriculum: ctx.curriculum,
       module_number: mod ? mod.module_number : '',
-      module_title: moduleTranslation.module_title || localeTranslation.module_title || (mod ? mod.module_title : ''),
+      module_title: activeTranslation.module_title || (mod ? mod.module_title : ''),
       dateLabel,
-      essential_question: localeTranslation.essential_question || state.lastDetails.eqRaw || '',
-      text_genres: localeTranslation.text_genres
-        ? localeTranslation.text_genres.split(/[\r\n]+/).map(value => value.trim()).filter(Boolean)
-        : state.lastDetails.genres || [],
-      books: (state.lastDetails.books || []).map(book => Object.assign({}, book, {
-        translated_title: localeTranslation.books && localeTranslation.books[book.title],
+      essential_question: activeTranslation.essential_question || (mod && mod.essential_question) || state.lastDetails.eqRaw || '',
+      text_genres: activeGenres,
+      books: activeBooks.map(book => Object.assign({}, book, {
+        translated_title: activeTranslation.books && activeTranslation.books[book.title],
       })),
     });
     applyRoleBlocks(html);

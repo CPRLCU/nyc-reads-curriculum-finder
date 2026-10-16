@@ -64,7 +64,7 @@ The export command fetches the current pacing-guide sheet and writes unique sour
    py scripts/translate_curriculum.py export
    ```
 
-   This collects unique module/theme titles, essential questions, genres, and book titles. Source text is keyed by a SHA-256 hash so unchanged entries keep their existing translations.
+   This collects unique module/theme titles, essential questions, individual genre descriptors, and book titles. Genre descriptors are reconstructed from the English source, including labels split across line breaks and labels separated by commas or slashes, then translated individually so each appears as a separate genre. Source text is keyed by a SHA-256 hash so unchanged entries keep their existing translations.
 3. Generate only missing translations:
 
    ```powershell

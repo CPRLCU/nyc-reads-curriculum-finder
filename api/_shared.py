@@ -183,8 +183,70 @@ def _curriculum_translation_fields(texts: dict, locale: str) -> dict:
 def split_genres(s: str):
     if not s:
         return []
+    multiword_genres = (
+        'Adventure Fiction', 'Argumentative Text', 'Autobiographical Fiction',
+        'Book Reviews', 'Classic Tale', 'Content Stages', 'Craft Stages',
+        'Epic Poem', 'Fairy Tale', 'Fiction Video', 'Friendly Letter',
+        'Graphic Novel', 'Historical Account', 'Historical Accounts',
+        'Historical Fiction', 'History Writing',
+        'Informational Story', 'Informational Text', 'Instructional Routines',
+        'Literary Criticism', 'Literary Nonfiction', 'Literary Novel',
+        'Literary Text',
+        'Magazine Article', 'Media: Video', 'Narrative Nonfiction',
+        'Narrative Poem', 'Narrative Poetry', 'Nonfiction Novel',
+        'Novel Excerpt', 'Novel in Verse', 'Opinion Article', 'Opinion Essay',
+        'Opinion Piece', 'Opinion Text', 'Opinion Writing', 'Personal Essay',
+        'Personal Narrative', 'Persuasive Essay', 'Persuasive Text',
+        'Photo Essay', 'Picture Book', 'Poetry Song', 'Procedural Text',
+        'Realistic Fiction', 'Science Fiction', 'Science Writing',
+        'Scientific Account', 'Short Story', 'Tall Tale', 'Types of Questions',
+    )
+    single_word_genres = (
+        'Account', 'Accounts', 'Advertisements', 'Adventure', 'Argument',
+        'Argumentative', 'Article', 'Autobiographical', 'Autobiography',
+        'Biography', 'Book', 'Comedy', 'Correspondence', 'Documentary',
+        'Drama', 'Editorial', 'Essay', 'Fable', 'Fantasy', 'Fiction',
+        'Film', 'Folktale', 'Historical', 'History', 'Humorous', 'Interview',
+        'Journalism', 'Legend', 'Letter', 'Literary', 'Memoir', 'Music',
+        'Mystery', 'Myth', 'Myths', 'Narrative', 'Nonfiction', 'Novel',
+        'Opinion', 'Picture', 'Play', 'Poem', 'Poems', 'Poetry', 'Realistic',
+        'Routine', 'Science', 'Scientific', 'Screenplay', 'Song', 'Songs',
+        'Speech', 'Speeches', 'Story', 'Tale', 'Text', 'Transcript', 'Video',
+    )
+    genre_tokens = {
+        tuple(token.casefold() for token in genre.split()): genre
+        for genre in (*multiword_genres, *single_word_genres)
+    }
+    longest_first = sorted(genre_tokens, key=len, reverse=True)
     unified = str(s).replace('\r\n', '\n').replace('\r', '\n')
-    return [g.strip() for g in unified.split('\n') if g.strip()]
+    pieces = re.split(r'[,\/]+', unified.replace('\n', ' '))
+    genres = []
+    seen = set()
+    for piece in pieces:
+        tokens = re.findall(r'[\w:.-]+', piece, flags=re.UNICODE)
+        index = 0
+        while index < len(tokens):
+            matched = next((
+                phrase for phrase in longest_first
+                if tuple(token.casefold() for token in tokens[index:index + len(phrase)]) == phrase
+            ), None)
+            if matched:
+                genre = genre_tokens[matched]
+                index += len(matched)
+            else:
+                start = index
+                index += 1
+                while index < len(tokens) and not any(
+                    tuple(token.casefold() for token in tokens[index:index + len(phrase)]) == phrase
+                    for phrase in longest_first
+                ):
+                    index += 1
+                genre = ' '.join(tokens[start:index])
+            key = genre.casefold()
+            if key and key not in seen:
+                genres.append(genre)
+                seen.add(key)
+    return genres
 
 
 def split_questions(s: str):
@@ -802,6 +864,14 @@ def build_modules(curriculum: str, grade: str, language: str = 'en'):
             end_md = end_md or e_md
         if not module_number:
             continue
+        essential_question = normalize_text(
+            (r.get(_normalize_header('Essential Questions')) or r.get('essential_question') or '').strip()
+        )
+        text_genres = normalize_text(
+            (r.get(_normalize_header('Text Genres')) or r.get('text_genres') or '').strip()
+        )
+        genres = split_genres(text_genres)
+        books = _collect_reading_list_items_strict(r)
         try:
             num = int(str(module_number).strip())
         except Exception:
@@ -812,8 +882,28 @@ def build_modules(curriculum: str, grade: str, language: str = 'en'):
             'module_title': module_title,
             'start_md': start_md,
             'end_md': end_md,
+            'essential_question': essential_question,
+            'text_genres': text_genres,
+            'genres': genres,
+            'books': books,
         }
-        translated_fields = _curriculum_translation_fields({'module_title': module_title}, language)
+        translated_fields = _curriculum_translation_fields({
+            'module_title': module_title,
+            'essential_question': essential_question,
+        }, language)
+        genre_translations = [
+            _localized_curriculum_text(genre, language) or genre
+            for genre in genres
+        ]
+        if genre_translations:
+            translated_fields['genres'] = genre_translations
+        translated_books = {
+            book['title']: translated
+            for book in books
+            if (translated := _localized_curriculum_text(book['title'], language))
+        }
+        if translated_books:
+            translated_fields['books'] = translated_books
         if translated_fields:
             module['translations'] = {language: translated_fields}
         modules.append(module)
@@ -1014,11 +1104,16 @@ def build_search(params: dict):
             'books_source': 'enumerated_strict',
         }
         if language in CURRICULUM_TRANSLATION_LOCALES:
+            genre_translations = [
+                _localized_curriculum_text(genre, language) or genre
+                for genre in item['genres']
+            ]
             translated_fields = _curriculum_translation_fields({
                 'module_title': module_title,
                 'essential_question': essential_question,
-                'text_genres': text_genres,
             }, language)
+            if genre_translations:
+                translated_fields['genres'] = genre_translations
             translated_books = {
                 book['title']: translated
                 for book in books_items

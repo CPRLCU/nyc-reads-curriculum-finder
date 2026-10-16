@@ -3,7 +3,10 @@
 
 import argparse
 import json
+import os
 import sys
+import tempfile
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,7 +32,31 @@ LOCALE_CODES = {
 
 def write_json(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    temporary_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode='w',
+            encoding='utf-8',
+            dir=path.parent,
+            prefix=path.name + '.',
+            suffix='.tmp',
+            delete=False,
+        ) as output:
+            temporary_path = Path(output.name)
+            output.write(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+            output.flush()
+            os.fsync(output.fileno())
+        for attempt in range(5):
+            try:
+                os.replace(temporary_path, path)
+                break
+            except PermissionError:
+                if attempt == 4:
+                    raise
+                time.sleep(0.2 * (attempt + 1))
+    finally:
+        if temporary_path and temporary_path.exists():
+            temporary_path.unlink()
 
 
 def export_sources(path):
@@ -42,13 +69,17 @@ def export_sources(path):
         for header, fallback in (
             ('theme', 'module_title'),
             ('essential_questions', 'essential_question'),
-            ('text_genres', 'text_genres'),
         ):
             text = _shared.normalize_text(
                 row.get(_shared._normalize_header(header)) or row.get(fallback) or ''
             )
             if text:
                 entries[_shared.curriculum_text_key(text)] = text
+        text_genres = _shared.normalize_text(
+            row.get(_shared._normalize_header('text_genres')) or row.get('text_genres') or ''
+        )
+        for genre in _shared.split_genres(text_genres):
+            entries[_shared.curriculum_text_key(genre)] = genre
         for book in _shared._collect_reading_list_items_strict(row):
             title = _shared.normalize_text(book.get('title') or '')
             if title:
@@ -100,6 +131,7 @@ def translate_missing(manifest_path, bundle_path, locales, model_name, batch_siz
     model = M2M100ForConditionalGeneration.from_pretrained(model_name).to(device)
     model.eval()
     bundle['locales'].setdefault('en', {})
+    saved_during_translation = False
     for locale in locales:
         locale_map = bundle['locales'].setdefault(locale, {})
         if not isinstance(locale_map, dict):
@@ -134,8 +166,10 @@ def translate_missing(manifest_path, bundle_path, locales, model_name, batch_siz
             for (key, _), output in zip(batch, generated):
                 locale_map[key] = tokenizer.decode(output, skip_special_tokens=True).strip()
             write_json(bundle_path, bundle)
+            saved_during_translation = True
             print(f'{locale}: translated {min(offset + len(batch), len(missing))}/{len(missing)}')
-    write_json(bundle_path, bundle)
+    if not saved_during_translation:
+        write_json(bundle_path, bundle)
     print(f'Saved translations to {bundle_path}')
 
 
