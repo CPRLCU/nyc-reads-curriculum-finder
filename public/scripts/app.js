@@ -60,6 +60,7 @@
       aboutIntro: 'This curriculum search tool helps identify exactly what students are learning in literacy at a given school — including the curriculum, current module, essential questions, and book lists.',
       disclaimerLabel: 'Disclaimer:',
       disclaimerText: 'This tool is intended to provide general information about district and school curriculum implementation. Timelines and materials may vary by school or classroom. For the most accurate and up-to-date information, please contact your school directly.',
+      translationNotice: 'To make this site more accessible, we have used online resources to create the translation you are currently reading. We know that errors may exist, so we greatly appreciate your patience. Please submit a feedback form or contact your school officials if you come across major errors, so we can do out best to fixthem.',
       filtersTitle: 'K-8 Find Your Curriculum',
       k8Program: 'K-8',
       prekProgram: 'Pre-K & 3K',
@@ -75,6 +76,7 @@
       dateHint: '(We’ll find the curriculum module for this date)',
       roleLabel: 'Role',
       languageLabel: 'Language',
+      programLabel: 'Curriculum program',
       allDistricts: 'All Districts',
       allGrades: 'All Grades',
       allRoles: 'All Roles',
@@ -123,6 +125,7 @@
       aboutIntro: 'Esta herramienta ayuda a identificar exactamente lo que estudian los estudiantes en alfabetizacion en una escuela determinada, incluido el curriculo, el modulo actual, las preguntas esenciales y las listas de lectura.',
       disclaimerLabel: 'Aviso:',
       disclaimerText: 'Esta herramienta ofrece informacion general sobre la implementacion del curriculo por distrito y escuela. Los tiempos y materiales pueden variar segun la escuela o el salon. Para obtener la informacion mas precisa y actualizada, comunicate directamente con tu escuela.',
+      translationNotice: 'Para que este sitio sea más accesible, hemos utilizado recursos en línea para crear la traducción que está leyendo. Sabemos que puede haber errores y agradecemos mucho su paciencia. Envíe un formulario de comentarios si encuentra errores importantes para que podamos hacer todo lo posible por corregirlos.',
       filtersTitle: 'K-8: Encuentra tu curriculo',
       k8Program: 'K-8',
       prekProgram: 'Pre-K y 3K',
@@ -138,6 +141,7 @@
       dateHint: '(Encontraremos el modulo curricular para esta fecha)',
       roleLabel: 'Rol',
       languageLabel: 'Idioma',
+      programLabel: 'Programa curricular',
       allDistricts: 'Todos los distritos',
       allGrades: 'Todos los grados',
       allRoles: 'Todos los roles',
@@ -178,6 +182,526 @@
       dataSource: 'Fuente de datos:',
       highSchoolUnavailable: 'NYC Reads actualmente se enfoca en los grados K–8. La informacion curricular y las listas de lectura para los grados 9–12 aun no estan disponibles en esta herramienta.',
       learnMoreHere: 'Para obtener mas informacion sobre NYC Reads, haz clic aqui.'
+    },
+    ar: {
+      languageLabel: 'اللغة',
+      programLabel: 'البرنامج الدراسي',
+      heroSubtitle: 'اكتشف المناهج والموضوعات ومواد القراءة لمدارس مدينة نيويورك',
+      aboutTitle: 'حول هذه الأداة',
+      filtersTitle: 'اعثر على منهجك للصفوف K-8',
+      k8Program: 'K-8',
+      prekProgram: 'ما قبل الروضة و3K',
+      prekTitle: 'موارد ما قبل الروضة و3K',
+      districtLabel: 'المنطقة التعليمية',
+      schoolLabel: 'المدرسة',
+      schoolPlaceholder: 'اكتب للبحث عن المدارس…',
+      clearSchoolAria: 'مسح المدرسة',
+      gradeLabel: 'الصف الدراسي',
+      dateLabel: 'التاريخ',
+      dateHint: '(سنجد وحدة المنهج لهذا التاريخ)',
+      roleLabel: 'الدور',
+      allDistricts: 'جميع المناطق',
+      allGrades: 'جميع الصفوف',
+      allRoles: 'جميع الأدوار',
+      roleOst: 'مقدم خدمات ما بعد المدرسة',
+      roleParent: 'ولي أمر أو مقدم رعاية',
+      roleSchool: 'قائد مدرسة أو معلم',
+      clearBtn: 'مسح',
+      searchBtn: 'العثور على المنهج',
+      searchingBtn: 'جارٍ البحث…',
+      resultsTitle: 'معلومات المنهج',
+      schoolInformation: 'معلومات المدرسة',
+      moduleInformation: 'معلومات الوحدة',
+      essentialQuestions: 'الأسئلة الأساسية',
+      textGenres: 'أنواع النصوص',
+      readingList: 'قائمة القراءة',
+      schoolField: 'المدرسة:',
+      gradeField: 'الصف:',
+      districtField: 'المنطقة:',
+      curriculumField: 'المنهج:',
+      moduleField: 'الوحدة:',
+      themeField: 'الموضوع:',
+      dateRangeField: 'الفترة الزمنية:',
+      prevBtn: '‹ السابق',
+      nextBtn: 'التالي ›',
+      noResults: 'لا توجد نتائج. جرّب تعديل عوامل التصفية أو التاريخ.',
+      schoolRequired: 'يرجى اختيار مدرسة للبحث.',
+      gradeRequired: 'يرجى اختيار صف دراسي للبحث.',
+      dateRequired: 'يرجى اختيار تاريخ للبحث.',
+      heroTitle: 'باحث مناهج NYC Reads',
+      aboutIntro: 'تساعدك أداة البحث هذه على معرفة ما يتعلمه الطلاب في القراءة والكتابة في مدارسهم، بما في ذلك المنهج والوحدة الحالية والأسئلة الأساسية وقوائم الكتب.',
+      disclaimerLabel: 'إخلاء المسؤولية:',
+      disclaimerText: 'تقدم هذه الأداة معلومات عامة عن تطبيق المناهج في المناطق والمدارس. قد تختلف المواعيد والمواد حسب المدرسة أو الصف. للحصول على أحدث المعلومات، يرجى التواصل مباشرة مع مدرستك.',
+      translationNotice: 'لجعل هذا الموقع أكثر سهولة في الاستخدام، استخدمنا موارد عبر الإنترنت لإنشاء الترجمة التي تقرأها الآن. نعلم أنه قد توجد أخطاء، ونقدّر صبرك كثيرًا. يُرجى إرسال نموذج الملاحظات إذا صادفت أخطاء كبيرة حتى نبذل قصارى جهدنا لتصحيحها.',
+      prekMessage: 'يعمل فريق NYC Reads Curriculum Finder على إضافة موارد لطلاب 3K وPre-K. يرجى العودة لاحقًا للاطلاع على التحديثات. للمزيد من المعلومات الآن، راجع:',
+      prekLink: 'Pre-K/3K: إنشاء روتين للقراءة',
+      feedbackTitle: 'ساعدنا على التحسين',
+      feedbackPrompt: 'هل مدرستك غير مدرجة أو هل هناك معلومات غير صحيحة؟',
+      feedbackButton: 'إرسال نموذج الملاحظات ←',
+      feedbackNote: 'نراجع الردود بانتظام ونستخدمها لتحسين الأداة.',
+      noScript: 'يتطلب هذا الموقع تشغيل JavaScript. يرجى تفعيله في المتصفح.',
+      noDataSheet: 'لا توجد بيانات. يرجى التحقق من جدول البيانات المرتبط.',
+      noDataMeta: 'تعذر تحميل البيانات الوصفية.',
+      noResultsGeneric: 'غير متوفر',
+      searchError: 'تعذر تحميل نتائج البحث. يرجى المحاولة مرة أخرى.',
+      dataSource: 'مصدر البيانات:',
+      highSchoolUnavailable: 'يركز NYC Reads حاليًا على الصفوف K–8. معلومات المناهج وقوائم القراءة للصفوف 9–12 غير متوفرة في هذه الأداة.',
+      learnMoreHere: 'لمعرفة المزيد عن NYC Reads، اضغط هنا.'
+    },
+    bn: {
+      languageLabel: 'ভাষা',
+      programLabel: 'পাঠ্যক্রমের প্রোগ্রাম',
+      heroSubtitle: 'নিউ ইয়র্ক সিটির স্কুলের পাঠ্যক্রম, বিষয় এবং পড়ার উপকরণ খুঁজুন',
+      aboutTitle: 'এই টুল সম্পর্কে',
+      filtersTitle: 'K-8 পাঠ্যক্রম খুঁজুন',
+      k8Program: 'K-8',
+      prekProgram: 'প্রি-K ও 3K',
+      prekTitle: 'প্রি-K ও 3K-এর উপকরণ',
+      districtLabel: 'ডিস্ট্রিক্ট',
+      schoolLabel: 'স্কুল',
+      schoolPlaceholder: 'স্কুল খুঁজতে লিখুন…',
+      clearSchoolAria: 'স্কুলের নাম মুছুন',
+      gradeLabel: 'শ্রেণি',
+      dateLabel: 'তারিখ',
+      dateHint: '(এই তারিখের পাঠ্যক্রমের মডিউল খুঁজে দেব)',
+      roleLabel: 'ভূমিকা',
+      allDistricts: 'সব ডিস্ট্রিক্ট',
+      allGrades: 'সব শ্রেণি',
+      allRoles: 'সব ভূমিকা',
+      roleOst: 'স্কুল-পরবর্তী কর্মসূচির প্রদানকারী',
+      roleParent: 'অভিভাবক বা যত্নদাতা',
+      roleSchool: 'স্কুলের নেতা বা শিক্ষক',
+      clearBtn: 'মুছুন',
+      searchBtn: 'পাঠ্যক্রম খুঁজুন',
+      searchingBtn: 'খোঁজা হচ্ছে…',
+      resultsTitle: 'পাঠ্যক্রমের তথ্য',
+      schoolInformation: 'স্কুলের তথ্য',
+      moduleInformation: 'মডিউলের তথ্য',
+      essentialQuestions: 'মূল প্রশ্ন',
+      textGenres: 'লেখার ধরন',
+      readingList: 'পড়ার তালিকা',
+      schoolField: 'স্কুল:',
+      gradeField: 'শ্রেণি:',
+      districtField: 'ডিস্ট্রিক্ট:',
+      curriculumField: 'পাঠ্যক্রম:',
+      moduleField: 'মডিউল:',
+      themeField: 'বিষয়:',
+      dateRangeField: 'তারিখের পরিসর:',
+      prevBtn: '‹ আগের',
+      nextBtn: 'পরের ›',
+      noResults: 'কোনো ফলাফল নেই। ফিল্টার বা তারিখ পরিবর্তন করে দেখুন।',
+      schoolRequired: 'অনুসন্ধানের জন্য একটি স্কুল বেছে নিন।',
+      gradeRequired: 'অনুসন্ধানের জন্য একটি শ্রেণি বেছে নিন।',
+      dateRequired: 'অনুসন্ধানের জন্য একটি তারিখ বেছে নিন।',
+      heroTitle: 'NYC Reads পাঠ্যক্রম অনুসন্ধান',
+      aboutIntro: 'এই টুলের মাধ্যমে শিক্ষার্থীরা স্কুলে সাক্ষরতার ক্ষেত্রে কী শিখছে—পাঠ্যক্রম, বর্তমান মডিউল, মূল প্রশ্ন ও বইয়ের তালিকা—তা খুঁজে পাওয়া যায়।',
+      disclaimerLabel: 'দাবিত্যাগ:',
+      disclaimerText: 'এই টুলে জেলা ও স্কুলের পাঠ্যক্রম বাস্তবায়ন সম্পর্কে সাধারণ তথ্য দেওয়া হয়। স্কুল বা শ্রেণিকক্ষ অনুযায়ী সময়সূচি ও উপকরণ ভিন্ন হতে পারে। সর্বশেষ তথ্যের জন্য সরাসরি স্কুলে যোগাযোগ করুন।',
+      translationNotice: 'এই সাইটটি আরও সহজলভ্য করতে, আপনি যে অনুবাদটি পড়ছেন তা তৈরি করতে আমরা অনলাইন সংস্থান ব্যবহার করেছি। আমরা জানি এতে ভুল থাকতে পারে, তাই আপনার ধৈর্যের জন্য আন্তরিকভাবে কৃতজ্ঞ। বড় কোনো ভুল চোখে পড়লে অনুগ্রহ করে মতামত ফর্ম জমা দিন, যাতে আমরা যথাসাধ্য সংশোধন করতে পারি।',
+      prekMessage: 'NYC Reads Curriculum Finder টিম 3K ও প্রি-K শিক্ষার্থীদের জন্য উপকরণ যোগ করার কাজ করছে। আপডেটের জন্য পরে আবার দেখুন। আপাতত আরও তথ্য এখানে:',
+      prekLink: 'প্রি-K/3K: পড়ার অভ্যাস গড়ে তুলুন',
+      feedbackTitle: 'উন্নত করতে সাহায্য করুন',
+      feedbackPrompt: 'আপনার স্কুল কি তালিকায় নেই, অথবা কোনো তথ্য ঠিক নয়?',
+      feedbackButton: 'মতামত ফর্ম জমা দিন →',
+      feedbackNote: 'আমরা নিয়মিত মতামত পর্যালোচনা করি এবং টুলটি উন্নত করতে ব্যবহার করি।',
+      noScript: 'এই সাইটটি চালাতে JavaScript প্রয়োজন। ব্রাউজারে এটি চালু করুন।',
+      noDataSheet: 'কোনো তথ্য নেই। সংযুক্ত স্প্রেডশিটটি পরীক্ষা করুন।',
+      noDataMeta: 'তথ্য লোড করা যায়নি।',
+      noResultsGeneric: 'উপলভ্য নয়',
+      searchError: 'অনুসন্ধানের ফলাফল লোড করা যায়নি। আবার চেষ্টা করুন।',
+      dataSource: 'তথ্যের উৎস:',
+      highSchoolUnavailable: 'NYC Reads বর্তমানে K–8 শ্রেণিতে মনোযোগ দিচ্ছে। 9–12 শ্রেণির পাঠ্যক্রম ও পড়ার তালিকা এই টুলে নেই।',
+      learnMoreHere: 'NYC Reads সম্পর্কে আরও জানতে এখানে ক্লিক করুন।'
+    },
+    fr: {
+      languageLabel: 'Langue',
+      programLabel: 'Programme scolaire',
+      heroSubtitle: 'Découvrez les programmes, les thèmes et les lectures des écoles de New York',
+      aboutTitle: 'À propos de cet outil',
+      filtersTitle: 'Trouver votre programme scolaire K-8',
+      k8Program: 'K-8',
+      prekProgram: 'Pré-K et 3K',
+      prekTitle: 'Ressources Pré-K et 3K',
+      districtLabel: 'District',
+      schoolLabel: 'École',
+      schoolPlaceholder: 'Saisissez le nom d’une école…',
+      clearSchoolAria: 'Effacer l’école',
+      gradeLabel: 'Niveau scolaire',
+      dateLabel: 'Date',
+      dateHint: '(Nous trouverons le module correspondant à cette date)',
+      roleLabel: 'Rôle',
+      allDistricts: 'Tous les districts',
+      allGrades: 'Tous les niveaux',
+      allRoles: 'Tous les rôles',
+      roleOst: 'Prestataire périscolaire',
+      roleParent: 'Parent ou responsable',
+      roleSchool: 'Direction ou personnel enseignant',
+      clearBtn: 'Effacer',
+      searchBtn: 'Trouver le programme',
+      searchingBtn: 'Recherche…',
+      resultsTitle: 'Informations sur le programme',
+      schoolInformation: 'Informations sur l’école',
+      moduleInformation: 'Informations sur le module',
+      essentialQuestions: 'Questions essentielles',
+      textGenres: 'Genres de textes',
+      readingList: 'Liste de lecture',
+      schoolField: 'École :',
+      gradeField: 'Niveau :',
+      districtField: 'District :',
+      curriculumField: 'Programme :',
+      moduleField: 'Module :',
+      themeField: 'Thème :',
+      dateRangeField: 'Période :',
+      prevBtn: '‹ Précédent',
+      nextBtn: 'Suivant ›',
+      noResults: 'Aucun résultat. Essayez de modifier les filtres ou la date.',
+      schoolRequired: 'Veuillez choisir une école.',
+      gradeRequired: 'Veuillez choisir un niveau scolaire.',
+      dateRequired: 'Veuillez choisir une date.',
+      heroTitle: 'Recherche de programmes NYC Reads',
+      aboutIntro: 'Cet outil aide à découvrir ce que les élèves apprennent en lecture et en écriture dans une école : programme, module actuel, questions essentielles et listes de livres.',
+      disclaimerLabel: 'Avertissement :',
+      disclaimerText: 'Cet outil fournit des informations générales sur les programmes des districts et des écoles. Les calendriers et les ressources peuvent varier. Pour obtenir les informations les plus récentes, contactez directement votre école.',
+      translationNotice: 'Pour rendre ce site plus accessible, nous avons utilisé des ressources en ligne pour créer la traduction que vous lisez actuellement. Nous savons qu’elle peut contenir des erreurs et vous remercions de votre patience. Si vous repérez des erreurs importantes, veuillez envoyer le formulaire de commentaires afin que nous puissions faire de notre mieux pour les corriger.',
+      prekMessage: 'L’équipe NYC Reads Curriculum Finder travaille à ajouter des ressources pour les élèves de 3K et Pré-K. Revenez plus tard pour les mises à jour. En attendant, consultez :',
+      prekLink: 'Pré-K/3K : instaurer une routine de lecture',
+      feedbackTitle: 'Aidez-nous à améliorer cet outil',
+      feedbackPrompt: 'Votre école est absente ou une information vous semble incorrecte ?',
+      feedbackButton: 'Envoyer le formulaire de commentaires →',
+      feedbackNote: 'Nous examinons régulièrement les réponses pour améliorer l’outil.',
+      noScript: 'Ce site nécessite JavaScript. Veuillez l’activer dans votre navigateur.',
+      noDataSheet: 'Aucune donnée. Vérifiez la feuille de calcul associée.',
+      noDataMeta: 'Impossible de charger les métadonnées.',
+      noResultsGeneric: 'Non disponible',
+      searchError: 'Impossible de charger les résultats. Veuillez réessayer.',
+      dataSource: 'Source des données :',
+      highSchoolUnavailable: 'NYC Reads se concentre actuellement sur les classes K–8. Les programmes et listes de lecture des classes 9–12 ne sont pas encore disponibles dans cet outil.',
+      learnMoreHere: 'Pour en savoir plus sur NYC Reads, cliquez ici.'
+    },
+    ht: {
+      languageLabel: 'Lang',
+      programLabel: 'Pwogram kourikoulòm',
+      heroSubtitle: 'Dekouvri pwogram, sijè ak materyèl lekti pou lekòl Vil Nouyòk yo',
+      aboutTitle: 'Konsènan zouti sa a',
+      filtersTitle: 'Jwenn pwogram K-8 ou a',
+      k8Program: 'K-8',
+      prekProgram: 'Pre-K ak 3K',
+      prekTitle: 'Resous Pre-K ak 3K',
+      districtLabel: 'Distri',
+      schoolLabel: 'Lekòl',
+      schoolPlaceholder: 'Tape pou chèche lekòl…',
+      clearSchoolAria: 'Efase lekòl la',
+      gradeLabel: 'Nivo klas',
+      dateLabel: 'Dat',
+      dateHint: '(N ap jwenn modil pwogram pou dat sa a)',
+      roleLabel: 'Wòl',
+      allDistricts: 'Tout distri yo',
+      allGrades: 'Tout klas yo',
+      allRoles: 'Tout wòl yo',
+      roleOst: 'Founisè aktivite apre lekòl',
+      roleParent: 'Paran oswa moun k ap pran swen timoun',
+      roleSchool: 'Responsab lekòl oswa pwofesè',
+      clearBtn: 'Efase',
+      searchBtn: 'Jwenn pwogram nan',
+      searchingBtn: 'N ap chèche…',
+      resultsTitle: 'Enfòmasyon sou pwogram nan',
+      schoolInformation: 'Enfòmasyon sou lekòl la',
+      moduleInformation: 'Enfòmasyon sou modil la',
+      essentialQuestions: 'Kesyon esansyèl',
+      textGenres: 'Kalite tèks',
+      readingList: 'Lis lekti',
+      schoolField: 'Lekòl:',
+      gradeField: 'Klas:',
+      districtField: 'Distri:',
+      curriculumField: 'Pwogram:',
+      moduleField: 'Modil:',
+      themeField: 'Sijè:',
+      dateRangeField: 'Peryòd dat:',
+      prevBtn: '‹ Anvan',
+      nextBtn: 'Apre ›',
+      noResults: 'Pa gen rezilta. Eseye chanje filtè yo oswa dat la.',
+      schoolRequired: 'Tanpri chwazi yon lekòl pou fè rechèch.',
+      gradeRequired: 'Tanpri chwazi yon nivo klas pou fè rechèch.',
+      dateRequired: 'Tanpri chwazi yon dat pou fè rechèch.',
+      heroTitle: 'Chèche pwogram NYC Reads',
+      aboutIntro: 'Zouti sa a ede w wè sa elèv yo ap aprann nan lekti ak ekriti nan yon lekòl: pwogram nan, modil aktyèl la, kesyon enpòtan yo ak lis liv yo.',
+      disclaimerLabel: 'Nòt enpòtan:',
+      disclaimerText: 'Zouti sa a bay enfòmasyon jeneral sou pwogram lekòl ak distri yo. Dat ak materyèl yo ka diferan selon lekòl oswa klas la. Pou enfòmasyon ki pi resan, kontakte lekòl ou dirèkteman.',
+      translationNotice: 'Pou rann sit sa a pi aksesib, nou itilize resous sou entènèt pou kreye tradiksyon w ap li kounye a. Nou konnen ka gen erè, epi nou apresye pasyans ou anpil. Tanpri voye yon fòm kòmantè si w jwenn gwo erè, pou nou ka fè tout sa nou kapab pou korije yo.',
+      prekMessage: 'Ekip NYC Reads Curriculum Finder la ap travay pou ajoute resous pou timoun 3K ak Pre-K. Tounen pita pou jwenn mizajou. Pou kounye a, jwenn plis enfòmasyon isit la:',
+      prekLink: 'Pre-K/3K: Kreye yon abitid lekti',
+      feedbackTitle: 'Ede nou amelyore zouti a',
+      feedbackPrompt: 'Lekòl ou a manke oswa gen yon bagay ki pa kòrèk?',
+      feedbackButton: 'Voye fòm kòmantè a →',
+      feedbackNote: 'Nou revize repons yo regilyèman pou amelyore zouti a.',
+      noScript: 'Sit sa a bezwen JavaScript. Tanpri aktive l nan navigatè w la.',
+      noDataSheet: 'Pa gen done. Tanpri verifye fèy kalkil ki konekte a.',
+      noDataMeta: 'Nou pa kapab chaje enfòmasyon yo.',
+      noResultsGeneric: 'Pa disponib',
+      searchError: 'Nou pa kapab chaje rezilta rechèch yo. Eseye ankò.',
+      dataSource: 'Sous done:',
+      highSchoolUnavailable: 'NYC Reads konsantre kounye a sou klas K–8. Zouti sa a poko gen enfòmasyon sou pwogram ak lis lekti pou klas 9–12.',
+      learnMoreHere: 'Pou aprann plis sou NYC Reads, klike la a.'
+    },
+    ko: {
+      languageLabel: '언어',
+      programLabel: '교육과정 프로그램',
+      heroSubtitle: '뉴욕시 학교의 교육과정, 주제 및 읽기 자료를 찾아보세요',
+      aboutTitle: '도구 소개',
+      filtersTitle: 'K-8 교육과정 찾기',
+      k8Program: 'K-8',
+      prekProgram: '프리-K 및 3K',
+      prekTitle: '프리-K 및 3K 자료',
+      districtLabel: '교육구',
+      schoolLabel: '학교',
+      schoolPlaceholder: '학교를 검색하려면 입력하세요…',
+      clearSchoolAria: '학교 지우기',
+      gradeLabel: '학년',
+      dateLabel: '날짜',
+      dateHint: '(이 날짜에 해당하는 교육과정 모듈을 찾습니다)',
+      roleLabel: '역할',
+      allDistricts: '모든 교육구',
+      allGrades: '모든 학년',
+      allRoles: '모든 역할',
+      roleOst: '방과 후 프로그램 제공자',
+      roleParent: '부모 또는 보호자',
+      roleSchool: '학교 관리자 또는 교사',
+      clearBtn: '지우기',
+      searchBtn: '교육과정 찾기',
+      searchingBtn: '검색 중…',
+      resultsTitle: '교육과정 정보',
+      schoolInformation: '학교 정보',
+      moduleInformation: '모듈 정보',
+      essentialQuestions: '핵심 질문',
+      textGenres: '텍스트 장르',
+      readingList: '읽기 목록',
+      schoolField: '학교:',
+      gradeField: '학년:',
+      districtField: '교육구:',
+      curriculumField: '교육과정:',
+      moduleField: '모듈:',
+      themeField: '주제:',
+      dateRangeField: '기간:',
+      prevBtn: '‹ 이전',
+      nextBtn: '다음 ›',
+      noResults: '결과가 없습니다. 필터나 날짜를 변경해 보세요.',
+      schoolRequired: '검색할 학교를 선택하세요.',
+      gradeRequired: '검색할 학년을 선택하세요.',
+      dateRequired: '검색할 날짜를 선택하세요.',
+      heroTitle: 'NYC Reads 교육과정 검색',
+      aboutIntro: '이 도구를 사용하면 학교에서 학생들이 배우는 읽기·쓰기 교육과정, 현재 모듈, 핵심 질문 및 도서 목록을 확인할 수 있습니다.',
+      disclaimerLabel: '안내:',
+      disclaimerText: '이 도구는 교육구와 학교의 교육과정 운영에 관한 일반 정보를 제공합니다. 일정과 자료는 학교나 교실에 따라 다를 수 있습니다. 최신 정보는 학교에 직접 문의하세요.',
+      translationNotice: '이 사이트의 접근성을 높이기 위해 온라인 자료를 사용하여 현재 읽고 계신 번역을 만들었습니다. 오류가 있을 수 있음을 알고 있으며, 기다려 주셔서 진심으로 감사합니다. 큰 오류를 발견하시면 피드백 양식을 제출해 주세요. 최선을 다해 수정하겠습니다.',
+      prekMessage: 'NYC Reads Curriculum Finder 팀은 3K 및 프리-K 자료를 추가하고 있습니다. 업데이트를 위해 나중에 다시 확인하세요. 우선 자세한 내용은 다음을 참고하세요:',
+      prekLink: '프리-K/3K: 독서 습관 만들기',
+      feedbackTitle: '개선을 도와주세요',
+      feedbackPrompt: '학교가 누락되었거나 정보가 정확하지 않나요?',
+      feedbackButton: '피드백 양식 제출 →',
+      feedbackNote: '정기적으로 의견을 검토하여 도구 개선에 반영합니다.',
+      noScript: '이 사이트를 사용하려면 JavaScript가 필요합니다. 브라우저에서 활성화하세요.',
+      noDataSheet: '데이터가 없습니다. 연결된 스프레드시트를 확인하세요.',
+      noDataMeta: '메타데이터를 불러올 수 없습니다.',
+      noResultsGeneric: '사용할 수 없음',
+      searchError: '검색 결과를 불러오지 못했습니다. 다시 시도하세요.',
+      dataSource: '데이터 출처:',
+      highSchoolUnavailable: 'NYC Reads는 현재 K–8 학년에 중점을 두고 있습니다. 이 도구에서는 9–12학년 교육과정 및 도서 목록을 제공하지 않습니다.',
+      learnMoreHere: 'NYC Reads에 대해 자세히 알아보려면 여기를 클릭하세요.'
+    },
+    zh: {
+      languageLabel: '语言',
+      programLabel: '课程项目',
+      heroSubtitle: '查找纽约市学校的课程、主题和阅读材料',
+      aboutTitle: '关于此工具',
+      filtersTitle: '查找 K-8 课程',
+      k8Program: 'K-8',
+      prekProgram: '学前班和 3K',
+      prekTitle: '学前班和 3K 资源',
+      districtLabel: '学区',
+      schoolLabel: '学校',
+      schoolPlaceholder: '输入以搜索学校…',
+      clearSchoolAria: '清除学校',
+      gradeLabel: '年级',
+      dateLabel: '日期',
+      dateHint: '（我们将查找此日期对应的课程模块）',
+      roleLabel: '身份',
+      allDistricts: '所有学区',
+      allGrades: '所有年级',
+      allRoles: '所有身份',
+      roleOst: '课后项目提供者',
+      roleParent: '家长或照护者',
+      roleSchool: '学校领导或教师',
+      clearBtn: '清除',
+      searchBtn: '查找课程',
+      searchingBtn: '正在搜索…',
+      resultsTitle: '课程信息',
+      schoolInformation: '学校信息',
+      moduleInformation: '模块信息',
+      essentialQuestions: '核心问题',
+      textGenres: '文本类型',
+      readingList: '阅读清单',
+      schoolField: '学校：',
+      gradeField: '年级：',
+      districtField: '学区：',
+      curriculumField: '课程：',
+      moduleField: '模块：',
+      themeField: '主题：',
+      dateRangeField: '日期范围：',
+      prevBtn: '‹ 上一项',
+      nextBtn: '下一项 ›',
+      noResults: '没有结果。请尝试调整筛选条件或日期。',
+      schoolRequired: '请选择要搜索的学校。',
+      gradeRequired: '请选择要搜索的年级。',
+      dateRequired: '请选择要搜索的日期。',
+      heroTitle: 'NYC Reads 课程查询',
+      aboutIntro: '此工具可帮助您了解学生在学校学习的读写内容，包括课程、当前单元、核心问题和书单。',
+      disclaimerLabel: '免责声明：',
+      disclaimerText: '此工具提供有关学区和学校课程实施的一般信息。时间安排和材料可能因学校或班级而异。请直接联系学校以获取最新信息。',
+      translationNotice: '为了让本网站更易于使用，我们使用在线资源制作了您正在阅读的译文。我们知道译文可能存在错误，非常感谢您的耐心。如果您发现重大错误，请提交反馈表，以便我们尽力修正。',
+      prekMessage: 'NYC Reads Curriculum Finder 团队正在为 3K 和学前班学生添加资源。请稍后查看更新。目前可在此了解更多信息：',
+      prekLink: '学前班/3K：建立阅读习惯',
+      feedbackTitle: '帮助我们改进',
+      feedbackPrompt: '没有找到您的学校，或发现信息不准确？',
+      feedbackButton: '提交反馈表 →',
+      feedbackNote: '我们会定期查看反馈并用于改进此工具。',
+      noScript: '此网站需要 JavaScript 才能运行。请在浏览器中启用。',
+      noDataSheet: '没有数据。请检查已连接的电子表格。',
+      noDataMeta: '无法加载元数据。',
+      noResultsGeneric: '暂无',
+      searchError: '无法加载搜索结果。请重试。',
+      dataSource: '数据来源：',
+      highSchoolUnavailable: 'NYC Reads 目前主要面向 K–8 年级。此工具暂不提供 9–12 年级课程信息和阅读清单。',
+      learnMoreHere: '点击此处了解更多 NYC Reads 信息。'
+    },
+    ru: {
+      languageLabel: 'Язык',
+      programLabel: 'Учебная программа',
+      heroSubtitle: 'Ищите учебные программы, темы и материалы для чтения в школах Нью-Йорка',
+      aboutTitle: 'Об инструменте',
+      filtersTitle: 'Найдите программу для классов K–8',
+      k8Program: 'K–8',
+      prekProgram: 'Pre-K и 3K',
+      prekTitle: 'Материалы для Pre-K и 3K',
+      districtLabel: 'Округ',
+      schoolLabel: 'Школа',
+      schoolPlaceholder: 'Введите название школы…',
+      clearSchoolAria: 'Очистить поле школы',
+      gradeLabel: 'Класс',
+      dateLabel: 'Дата',
+      dateHint: '(Мы найдем модуль программы для этой даты)',
+      roleLabel: 'Роль',
+      allDistricts: 'Все округа',
+      allGrades: 'Все классы',
+      allRoles: 'Все роли',
+      roleOst: 'Поставщик внешкольных программ',
+      roleParent: 'Родитель или опекун',
+      roleSchool: 'Руководитель школы или учитель',
+      clearBtn: 'Очистить',
+      searchBtn: 'Найти программу',
+      searchingBtn: 'Поиск…',
+      resultsTitle: 'Информация об учебной программе',
+      schoolInformation: 'Информация о школе',
+      moduleInformation: 'Информация о модуле',
+      essentialQuestions: 'Основные вопросы',
+      textGenres: 'Жанры текстов',
+      readingList: 'Список для чтения',
+      schoolField: 'Школа:',
+      gradeField: 'Класс:',
+      districtField: 'Округ:',
+      curriculumField: 'Программа:',
+      moduleField: 'Модуль:',
+      themeField: 'Тема:',
+      dateRangeField: 'Период:',
+      prevBtn: '‹ Назад',
+      nextBtn: 'Далее ›',
+      noResults: 'Результатов нет. Попробуйте изменить фильтры или дату.',
+      schoolRequired: 'Выберите школу для поиска.',
+      gradeRequired: 'Выберите класс для поиска.',
+      dateRequired: 'Выберите дату для поиска.',
+      heroTitle: 'Поиск программ NYC Reads',
+      aboutIntro: 'С помощью этого инструмента можно узнать, что ученики изучают в школе по чтению и письму: программу, текущий модуль, основные вопросы и списки книг.',
+      disclaimerLabel: 'Отказ от ответственности:',
+      disclaimerText: 'Инструмент содержит общую информацию о программах округов и школ. Сроки и материалы могут различаться. Чтобы узнать актуальную информацию, свяжитесь со школой напрямую.',
+      translationNotice: 'Чтобы сделать сайт доступнее, мы использовали онлайн-ресурсы для создания перевода, который вы сейчас читаете. Мы понимаем, что в нем могут быть ошибки, и благодарим вас за терпение. Если вы заметили серьезные ошибки, отправьте форму отзыва, чтобы мы могли постараться их исправить.',
+      prekMessage: 'Команда NYC Reads Curriculum Finder добавляет материалы для учеников 3K и Pre-K. Позже вернитесь за обновлениями. А пока дополнительная информация доступна здесь:',
+      prekLink: 'Pre-K/3K: формируем привычку читать',
+      feedbackTitle: 'Помогите нам улучшить сервис',
+      feedbackPrompt: 'Не нашли свою школу или заметили неточность?',
+      feedbackButton: 'Отправить отзыв →',
+      feedbackNote: 'Мы регулярно рассматриваем отзывы и используем их для улучшения инструмента.',
+      noScript: 'Для работы сайта требуется JavaScript. Включите его в браузере.',
+      noDataSheet: 'Данные отсутствуют. Проверьте подключенную таблицу.',
+      noDataMeta: 'Не удалось загрузить метаданные.',
+      noResultsGeneric: 'Недоступно',
+      searchError: 'Не удалось загрузить результаты поиска. Повторите попытку.',
+      dataSource: 'Источник данных:',
+      highSchoolUnavailable: 'NYC Reads сейчас ориентирован на классы K–8. Информация о программах и списки чтения для классов 9–12 в этом инструменте пока недоступны.',
+      learnMoreHere: 'Нажмите здесь, чтобы узнать больше о NYC Reads.'
+    },
+    ur: {
+      languageLabel: 'زبان',
+      programLabel: 'تعلیمی پروگرام',
+      heroSubtitle: 'نیو یارک سٹی کے اسکولوں کے نصاب، موضوعات اور مطالعے کا مواد تلاش کریں',
+      aboutTitle: 'اس ٹول کے بارے میں',
+      filtersTitle: 'K-8 کا نصاب تلاش کریں',
+      k8Program: 'K-8',
+      prekProgram: 'پری-K اور 3K',
+      prekTitle: 'پری-K اور 3K کے وسائل',
+      districtLabel: 'ضلع',
+      schoolLabel: 'اسکول',
+      schoolPlaceholder: 'اسکول تلاش کرنے کے لیے لکھیں…',
+      clearSchoolAria: 'اسکول کا نام مٹائیں',
+      gradeLabel: 'جماعت',
+      dateLabel: 'تاریخ',
+      dateHint: '(ہم اس تاریخ کے لیے نصاب کا ماڈیول تلاش کریں گے)',
+      roleLabel: 'کردار',
+      allDistricts: 'تمام اضلاع',
+      allGrades: 'تمام جماعتیں',
+      allRoles: 'تمام کردار',
+      roleOst: 'اسکول کے بعد کے پروگرام کا فراہم کنندہ',
+      roleParent: 'والدین یا نگہداشت کرنے والا',
+      roleSchool: 'اسکول رہنما یا استاد',
+      clearBtn: 'مٹائیں',
+      searchBtn: 'نصاب تلاش کریں',
+      searchingBtn: 'تلاش جاری ہے…',
+      resultsTitle: 'نصاب کی معلومات',
+      schoolInformation: 'اسکول کی معلومات',
+      moduleInformation: 'ماڈیول کی معلومات',
+      essentialQuestions: 'اہم سوالات',
+      textGenres: 'متن کی اقسام',
+      readingList: 'مطالعے کی فہرست',
+      schoolField: 'اسکول:',
+      gradeField: 'جماعت:',
+      districtField: 'ضلع:',
+      curriculumField: 'نصاب:',
+      moduleField: 'ماڈیول:',
+      themeField: 'موضوع:',
+      dateRangeField: 'مدت:',
+      prevBtn: '‹ پچھلا',
+      nextBtn: 'اگلا ›',
+      noResults: 'کوئی نتیجہ نہیں۔ فلٹر یا تاریخ تبدیل کر کے دیکھیں۔',
+      schoolRequired: 'تلاش کے لیے اسکول منتخب کریں۔',
+      gradeRequired: 'تلاش کے لیے جماعت منتخب کریں۔',
+      dateRequired: 'تلاش کے لیے تاریخ منتخب کریں۔',
+      heroTitle: 'NYC Reads نصاب تلاش',
+      aboutIntro: 'یہ ٹول آپ کو یہ جاننے میں مدد دیتا ہے کہ اسکول میں طلبہ خواندگی کے لیے کیا سیکھ رہے ہیں، بشمول نصاب، موجودہ ماڈیول، بنیادی سوالات اور کتابوں کی فہرست۔',
+      disclaimerLabel: 'وضاحت:',
+      disclaimerText: 'یہ ٹول ضلع اور اسکول میں نصاب کے نفاذ کے بارے میں عمومی معلومات فراہم کرتا ہے۔ اوقات اور مواد اسکول یا کلاس کے لحاظ سے مختلف ہو سکتے ہیں۔ تازہ ترین معلومات کے لیے اپنے اسکول سے براہ راست رابطہ کریں۔',
+      translationNotice: 'اس سائٹ کو مزید قابلِ رسائی بنانے کے لیے، ہم نے آپ کے پڑھے جانے والے ترجمے کی تیاری میں آن لائن وسائل استعمال کیے ہیں۔ ہمیں معلوم ہے کہ اس میں غلطیاں ہو سکتی ہیں، اور ہم آپ کے صبر کے لیے تہہ دل سے شکر گزار ہیں۔ اگر آپ کو بڑی غلطیاں نظر آئیں تو براہِ کرم رائے کا فارم جمع کریں تاکہ ہم انہیں درست کرنے کی پوری کوشش کر سکیں۔',
+      prekMessage: 'NYC Reads Curriculum Finder ٹیم 3K اور پری-K طلبہ کے لیے وسائل شامل کر رہی ہے۔ تازہ معلومات کے لیے بعد میں دوبارہ دیکھیں۔ فی الحال مزید معلومات یہاں ہیں:',
+      prekLink: 'پری-K/3K: مطالعے کا معمول بنائیں',
+      feedbackTitle: 'بہتری میں ہماری مدد کریں',
+      feedbackPrompt: 'کیا آپ کا اسکول موجود نہیں یا کوئی معلومات درست نہیں؟',
+      feedbackButton: 'رائے کا فارم جمع کریں ←',
+      feedbackNote: 'ہم باقاعدگی سے جوابات کا جائزہ لیتے ہیں اور ٹول کو بہتر بنانے کے لیے استعمال کرتے ہیں۔',
+      noScript: 'اس ویب سائٹ کے لیے JavaScript ضروری ہے۔ براہ کرم اسے براؤزر میں فعال کریں۔',
+      noDataSheet: 'کوئی ڈیٹا نہیں۔ منسلک اسپریڈشیٹ چیک کریں۔',
+      noDataMeta: 'میٹا ڈیٹا لوڈ نہیں ہو سکا۔',
+      noResultsGeneric: 'دستیاب نہیں',
+      searchError: 'تلاش کے نتائج لوڈ نہیں ہو سکے۔ دوبارہ کوشش کریں۔',
+      dataSource: 'ڈیٹا کا ماخذ:',
+      highSchoolUnavailable: 'NYC Reads فی الحال K–8 جماعتوں پر توجہ دیتا ہے۔ اس ٹول میں 9–12 جماعتوں کے نصاب اور مطالعے کی فہرستیں دستیاب نہیں ہیں۔',
+      learnMoreHere: 'NYC Reads کے بارے میں مزید جاننے کے لیے یہاں کلک کریں۔'
     }
   };
 
@@ -188,7 +712,8 @@
 
   function getStoredLanguage() {
     try {
-      return window.localStorage.getItem('selectedLanguage') || 'en';
+      const language = window.localStorage.getItem('selectedLanguage') || 'en';
+      return Object.prototype.hasOwnProperty.call(translations, language) ? language : 'en';
     } catch (err) {
       console.warn('[i18n] Unable to read selectedLanguage from localStorage', err);
       return 'en';
@@ -323,6 +848,7 @@
 
   function applyLanguage() {
     document.documentElement.lang = state.selectedLanguage || 'en';
+    document.documentElement.dir = ['ar', 'ur'].indexOf(state.selectedLanguage) !== -1 ? 'rtl' : 'ltr';
     const setText = (id, value) => {
       const el = document.getElementById(id);
       if (el) el.textContent = value;
@@ -333,6 +859,11 @@
     setText('aboutIntro', t('aboutIntro'));
     setText('disclaimerLabel', t('disclaimerLabel'));
     setText('disclaimerText', t('disclaimerText'));
+    const translationNotice = document.getElementById('translationNotice');
+    if (translationNotice) {
+      translationNotice.textContent = t('translationNotice');
+      translationNotice.hidden = state.selectedLanguage === 'en';
+    }
     setText('filtersTitle', t('filtersTitle'));
     setText('k8ProgramButton', t('k8Program'));
     setText('prekProgramButton', t('prekProgram'));
@@ -350,19 +881,22 @@
     setText('feedbackButton', t('feedbackButton'));
     setText('feedbackNote', t('feedbackNote'));
     setText('noscriptMessage', t('noScript'));
+    const programSwitch = document.querySelector('.program-switch');
+    const filtersSection = document.getElementById('filters');
+    const resultsSection = document.getElementById('results');
+    const feedbackSection = document.getElementById('feedbackSection');
+    if (programSwitch) programSwitch.setAttribute('aria-label', t('programLabel'));
+    if (filtersSection) filtersSection.setAttribute('aria-label', t('filtersTitle'));
+    if (resultsSection) resultsSection.setAttribute('aria-label', t('resultsTitle'));
+    if (feedbackSection) feedbackSection.setAttribute('aria-label', t('feedbackTitle'));
     if (els.schoolInput) els.schoolInput.placeholder = t('schoolPlaceholder');
     if (els.clearSchool) els.clearSchool.setAttribute('aria-label', t('clearSchoolAria'));
     if (els.clear) els.clear.textContent = t('clearBtn');
     if (els.search && !els.search.disabled) els.search.textContent = t('searchBtn');
+    if (els.language) els.language.setAttribute('aria-label', t('languageLabel'));
     const dateLabel = document.getElementById('dateLabel');
     if (dateLabel) {
       dateLabel.innerHTML = t('dateLabel') + ' <span class="hint" id="dateHint">' + t('dateHint') + '</span>';
-    }
-    if (els.language) {
-      const labels = { en: 'English', es: 'Espanol' };
-      Array.from(els.language.options || []).forEach(option => {
-        option.text = labels[option.value] || option.value;
-      });
     }
     updateTranslatedFilterLabels();
   }
@@ -700,6 +1234,9 @@
     const disableBookLinks = isOstRoleSelected();
     const bookList = (books || []).map(b => {
       const title = b && b.title ? String(b.title) : '';
+      const translatedTitle = b && b.translated_title && String(b.translated_title) !== title
+        ? String(b.translated_title)
+        : '';
       const link = b && b.url ? String(b.url) : '';
       const cover = b && (b.coverImageUrl || b.coverimageurl) ? String(b.coverImageUrl || b.coverimageurl) : '';
       const imgTag = cover ? ('<img src="' + cover + '" alt="' + escapeHTML(title || 'Book cover') + '" onerror="this.onerror=null; this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';" />') : '';
@@ -708,7 +1245,10 @@
         : imgTag;
       const fallback = '<div class="book-fallback"' + (cover ? '' : ' style="display:flex;"') + '>' + (state.selectedLanguage === 'es' ? 'Portada no disponible por ahora' : 'Book cover not available for now') + '</div>';
       const titleHtml = (!disableBookLinks && link) ? ('<a href="' + link + '" target="_blank" rel="noopener noreferrer">' + escapeHTML(title) + '</a>') : escapeHTML(title);
-      return '<li class="book-item"><div class="book-thumb">' + img + fallback + '</div><div class="book-title">' + titleHtml + '</div></li>';
+      const translatedTitleHtml = translatedTitle
+        ? ' <span class="translated-book-title">(' + escapeHTML(translatedTitle) + ')</span>'
+        : '';
+      return '<li class="book-item"><div class="book-thumb">' + img + fallback + '</div><div class="book-title">' + titleHtml + translatedTitleHtml + '</div></li>';
     }).join('');
     // Recommended Text section removed
 
@@ -866,10 +1406,19 @@
     }
     console.log('[Debug] Essential Questions raw:', eqRaw);
     console.log('[Search] Parsed books', { books_len: books.length, sample: books.slice(0, 3) });
-    state.lastDetails = { eqRaw, genres, books };
+    state.lastDetails = {
+      eqRaw,
+      genres,
+      books,
+      translations: row && row.translations && typeof row.translations === 'object' ? row.translations : {},
+    };
 
     // Load modules and set active index
-    const params = new URLSearchParams({ curriculum: String(row.curriculum || ''), grade: String(row.grade || '') });
+    const params = new URLSearchParams({
+      curriculum: String(row.curriculum || ''),
+      grade: String(row.grade || ''),
+      language: state.selectedLanguage || 'en',
+    });
     fetch('/api/modules?' + params.toString(), { cache: 'no-cache' })
       .then(r => r.ok ? r.json() : Promise.reject(new Error('modules fetch failed')))
       .then(json => {
@@ -904,6 +1453,11 @@
     if (!els.resultsMount || !state.lastContext) return;
     const ctx = state.lastContext;
     const mod = (state.modules && state.modules[state.activeIndex]) || null;
+    const translations = state.lastDetails.translations || {};
+    const localeTranslation = translations[state.selectedLanguage] || {};
+    const moduleTranslation = mod && mod.translations && mod.translations[state.selectedLanguage]
+      ? mod.translations[state.selectedLanguage]
+      : {};
     const dateLabel = (mod && mod.start_md && mod.end_md) ? (mod.start_md + ' – ' + mod.end_md) : '';
     const html = renderResultCard({
       district: ctx.district,
@@ -911,11 +1465,15 @@
       grade: ctx.grade,
       curriculum: ctx.curriculum,
       module_number: mod ? mod.module_number : '',
-      module_title: mod ? mod.module_title : '',
+      module_title: moduleTranslation.module_title || localeTranslation.module_title || (mod ? mod.module_title : ''),
       dateLabel,
-      essential_question: state.lastDetails.eqRaw || '',
-      text_genres: state.lastDetails.genres || [],
-      books: state.lastDetails.books || [],
+      essential_question: localeTranslation.essential_question || state.lastDetails.eqRaw || '',
+      text_genres: localeTranslation.text_genres
+        ? localeTranslation.text_genres.split(/[\r\n]+/).map(value => value.trim()).filter(Boolean)
+        : state.lastDetails.genres || [],
+      books: (state.lastDetails.books || []).map(book => Object.assign({}, book, {
+        translated_title: localeTranslation.books && localeTranslation.books[book.title],
+      })),
     });
     applyRoleBlocks(html);
     stripReadingListLinksForOst();
@@ -961,6 +1519,7 @@
     if (schoolValue) params.set('school', schoolValue);
     if (els.grade.value) params.set('grade', els.grade.value);
     if (els.role && els.role.value) params.set('role', els.role.value);
+    params.set('language', state.selectedLanguage || 'en');
 
     const url = '/api/search' + (params.toString() ? ('?' + params.toString()) : '');
     try {
@@ -1039,7 +1598,7 @@
         saveStoredLanguage(state.selectedLanguage);
         applyLanguage();
         recomputeGradeOptionsForSelection();
-        if (state.lastContext) renderResultFromState();
+        if (state.lastContext) void doSearch();
       });
     }
     els.clear.addEventListener('click', () => {

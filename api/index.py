@@ -55,7 +55,8 @@ def api_modules():
         return json_utf8({'ok': True}, 204)
     curriculum = (request.args.get('curriculum') or '').strip()
     grade = (request.args.get('grade') or '').strip()
-    data = build_modules(curriculum, grade)
+    language = (request.args.get('language') or 'en').strip()
+    data = build_modules(curriculum, grade, language)
     return json_utf8(data)
 
 
@@ -69,6 +70,7 @@ def api_search():
         'district': (request.args.get('district') or '').strip(),
         'school': (request.args.get('school') or '').strip(),
         'grade': (request.args.get('grade') or '').strip(),
+        'language': (request.args.get('language') or 'en').strip(),
         'debug': (request.args.get('debug') or '').strip(),
     }
     data = build_search(params)
@@ -112,14 +114,15 @@ def api_dispatch_rewrite():
     if tail == 'modules':
         curriculum = (request.args.get('curriculum') or '').strip()
         grade = (request.args.get('grade') or '').strip()
-        return json_utf8(build_modules(curriculum, grade))
+        language = (request.args.get('language') or 'en').strip()
+        return json_utf8(build_modules(curriculum, grade, language))
     if tail == 'search':
         params = {
             'date': (request.args.get('date') or '').strip(),
             'district': (request.args.get('district') or '').strip(),
             'school': (request.args.get('school') or '').strip(),
             'grade': (request.args.get('grade') or '').strip(),
+            'language': (request.args.get('language') or 'en').strip(),
         }
         return json_utf8(build_search(params))
     return json_utf8({'error': 'Not Found', 'path': orig}, 404)
-
