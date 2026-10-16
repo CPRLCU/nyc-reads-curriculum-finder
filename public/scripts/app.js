@@ -1231,7 +1231,6 @@
     const { district, school, grade, curriculum, module_number, module_title, dateLabel, essential_question, text_genres, books } = model;
     const eqParagraph = '<p>' + escapeHTML(essential_question || '') + '</p>';
     const genrePills = (text_genres || []).map(g => '<span class="pill">' + escapeHTML(g) + '</span>').join('');
-    const disableBookLinks = isOstRoleSelected();
     const bookList = (books || []).map(b => {
       const title = b && b.title ? String(b.title) : '';
       const translatedTitle = b && b.translated_title && String(b.translated_title) !== title
@@ -1240,11 +1239,11 @@
       const link = b && b.url ? String(b.url) : '';
       const cover = b && (b.coverImageUrl || b.coverimageurl) ? String(b.coverImageUrl || b.coverimageurl) : '';
       const imgTag = cover ? ('<img src="' + cover + '" alt="' + escapeHTML(title || 'Book cover') + '" onerror="this.onerror=null; this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';" />') : '';
-      const img = !disableBookLinks && link && imgTag
+      const img = link && imgTag
         ? ('<a href="' + link + '" target="_blank" rel="noopener noreferrer">' + imgTag + '</a>')
         : imgTag;
       const fallback = '<div class="book-fallback"' + (cover ? '' : ' style="display:flex;"') + '>' + (state.selectedLanguage === 'es' ? 'Portada no disponible por ahora' : 'Book cover not available for now') + '</div>';
-      const titleHtml = (!disableBookLinks && link) ? ('<a href="' + link + '" target="_blank" rel="noopener noreferrer">' + escapeHTML(title) + '</a>') : escapeHTML(title);
+      const titleHtml = link ? ('<a href="' + link + '" target="_blank" rel="noopener noreferrer">' + escapeHTML(title) + '</a>') : escapeHTML(title);
       const translatedTitleHtml = translatedTitle
         ? ' <span class="translated-book-title">(' + escapeHTML(translatedTitle) + ')</span>'
         : '';
@@ -1476,7 +1475,6 @@
       })),
     });
     applyRoleBlocks(html);
-    stripReadingListLinksForOst();
     const prevBtn = document.getElementById('btnPrev');
     const nextBtn = document.getElementById('btnNext');
     if (prevBtn && nextBtn) {
@@ -1491,24 +1489,6 @@
     if (!prevBtn || !nextBtn) return;
     prevBtn.disabled = (state.activeIndex <= 0);
     nextBtn.disabled = (state.activeIndex >= (state.modules ? state.modules.length - 1 : 0));
-  }
-
-  function stripReadingListLinksForOst() {
-    if (!isOstRoleSelected()) return;
-    if (!els.resultsMount) return;
-
-    const titleLinks = els.resultsMount.querySelectorAll('.book-item .book-title a');
-    titleLinks.forEach(anchor => {
-      anchor.replaceWith(document.createTextNode(anchor.textContent || ''));
-    });
-
-    const imageLinks = els.resultsMount.querySelectorAll('.book-item .book-thumb a');
-    imageLinks.forEach(anchor => {
-      while (anchor.firstChild) {
-        anchor.parentNode.insertBefore(anchor.firstChild, anchor);
-      }
-      anchor.remove();
-    });
   }
 
   async function doSearch() {
