@@ -20,10 +20,19 @@ except Exception:  # noqa: BLE001
 logger = logging.getLogger("api")
 logger.setLevel(logging.INFO)
 
-CURRICULUM_TRANSLATION_LOCALES = ('ar', 'bn', 'fr', 'ht', 'ko', 'zh', 'ru', 'es', 'ur')
+CURRICULUM_TRANSLATION_LOCALES = (
+    'ar', 'bn', 'fr', 'ht', 'ko', 'zh', 'ru', 'es', 'ur',
+    'sq', 'zh-TW', 'uk', 'uz',
+)
 CURRICULUM_TRANSLATIONS_PATH = os.path.join(
     os.path.dirname(os.path.dirname(__file__)), 'data', 'curriculum_translations.json'
 )
+
+
+def normalize_locale(locale: str) -> str:
+    normalized = (locale or '').strip().lower()
+    return 'zh-TW' if normalized == 'zh-tw' else normalized
+
 
 # Track last-seen header order for logging/index mapping
 LAST_PACING_HEADERS_ORDER = []
@@ -162,6 +171,7 @@ def _load_curriculum_translations_file(path: str, modified_ns: int, file_size: i
 
 
 def _localized_curriculum_text(text: str, locale: str) -> str:
+    locale = normalize_locale(locale)
     if locale not in CURRICULUM_TRANSLATION_LOCALES or not text:
         return ''
     translations = _load_curriculum_translations().get(locale, {})
@@ -843,6 +853,7 @@ def build_meta(debug: bool = False):
 def build_modules(curriculum: str, grade: str, language: str = 'en'):
     if not curriculum or not grade:
         return {'modules': []}
+    language = normalize_locale(language)
     try:
         pacing_rows = _fetch_pacing_csv()
     except Exception:
@@ -916,7 +927,7 @@ def build_search(params: dict):
     q_district = (params.get('district') or '').strip()
     q_school = (params.get('school') or '').strip()
     q_grade = (params.get('grade') or '').strip()
-    language = (params.get('language') or 'en').strip().lower()
+    language = normalize_locale(params.get('language') or 'en')
     debug_flag = str(params.get('debug') or '').lower() in ('1', 'true', 'yes')
     ref = None
     try:

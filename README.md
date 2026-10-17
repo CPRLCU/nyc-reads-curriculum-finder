@@ -53,7 +53,9 @@ py scripts/translate_curriculum.py export
 py scripts/translate_curriculum.py translate
 ```
 
-The export command fetches the current pacing-guide sheet and writes unique source strings to `data/curriculum_translation_sources.json`. The translate command uses Meta's [MIT-licensed M2M100 model](https://huggingface.co/facebook/m2m100_418M) to add missing entries to `data/curriculum_translations.json` for Arabic, Bangla, French, Haitian Creole, Korean, Mandarin Chinese, Russian, Spanish, and Urdu. It reuses existing entries so unchanged source text is not translated again. Review machine-generated educational text and title translations with fluent speakers before committing the bundle. If the tokenizer does not support a requested language code, the command stops with an error rather than silently substituting another translation.
+The export command fetches the current pacing-guide sheet and writes unique source strings to `data/curriculum_translation_sources.json`. The translate command uses Meta's [MIT-licensed M2M100 model](https://huggingface.co/facebook/m2m100_418M) to add missing entries to `data/curriculum_translations.json` for Albanian, Arabic, Bangla, French, Haitian Creole, Korean, Mandarin Chinese (Simplified and Traditional), Russian, Spanish, Ukrainian, Urdu, and Uzbek. Traditional Chinese is generated from the model's Chinese output using OpenCC. The command reuses existing entries so unchanged source text is not translated again. Review machine-generated educational text and title translations with fluent speakers before committing the bundle. If the tokenizer does not support a requested language code, the command stops with an error rather than silently substituting another translation.
+
+The interface and parent/caregiver guidance translations for Albanian, Traditional Chinese, Ukrainian, and Uzbek are stored in `public/translations/additional.json` and loaded by the site for those language choices.
 
 #### Updating curriculum data and translations
 
@@ -71,7 +73,7 @@ The export command fetches the current pacing-guide sheet and writes unique sour
    py scripts/translate_curriculum.py translate
    ```
 
-   This fills `data/curriculum_translations.json` for all nine non-English locales. To generate only selected locales, pass their codes, for example `--locales fr es`.
+   This fills `data/curriculum_translations.json` for all thirteen non-English locales. To generate only selected locales, pass their codes, for example `--locales fr es zh-TW`.
 4. Review the generated strings with fluent speakers. Correct wording directly in `data/curriculum_translations.json`, under `locales` → language code → source-text hash. Keep the original English source and book title intact; book translations render beside their English titles. The JSON bundle is the deployed source of truth, so hand-reviewed corrections persist and are not overwritten for unchanged source strings.
 5. Run the tests and commit the updated translation bundle. If a source string is edited, its hash changes and the next translation run adds a translation for the new text while retaining the previous entry. Missing translations display the English source as a fallback.
 

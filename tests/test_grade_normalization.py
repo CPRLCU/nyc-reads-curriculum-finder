@@ -134,6 +134,27 @@ def test_split_genres_reassembles_and_separates_descriptors():
     ]
 
 
+def test_traditional_chinese_locale_is_canonicalized_and_translated(monkeypatch):
+    title = 'The Solar System'
+    translation = '太陽系'
+    monkeypatch.setattr(_shared, '_fetch_pacing_csv', lambda: [{
+        'curriculum': 'HMH Into Reading',
+        'grade_level': '4',
+        'module': '1',
+        'theme': title,
+        'start_md': '08-01',
+        'end_md': '09-15',
+    }])
+    monkeypatch.setattr(_shared, '_load_curriculum_translations', lambda: {
+        'zh-TW': {_shared.curriculum_text_key(title): translation}
+    })
+
+    response = _shared.build_modules('HMH Into Reading', '4', 'zh-tw')
+
+    assert _shared.normalize_locale('ZH-tw') == 'zh-TW'
+    assert response['modules'][0]['translations']['zh-TW']['module_title'] == translation
+
+
 def test_build_modules_includes_saved_module_title_translation(monkeypatch):
     title = 'The Renaissance'
     question = 'What changed during the Renaissance?'

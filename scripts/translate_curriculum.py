@@ -27,6 +27,10 @@ LOCALE_CODES = {
     'ru': 'ru',
     'es': 'es',
     'ur': 'ur',
+    'sq': 'sq',
+    'zh-TW': 'zh',
+    'uk': 'uk',
+    'uz': 'uz',
 }
 
 
@@ -130,6 +134,15 @@ def translate_missing(manifest_path, bundle_path, locales, model_name, batch_siz
     tokenizer = M2M100Tokenizer.from_pretrained(model_name)
     model = M2M100ForConditionalGeneration.from_pretrained(model_name).to(device)
     model.eval()
+    traditional_chinese = None
+    if 'zh-TW' in locales:
+        try:
+            from opencc import OpenCC
+        except ImportError as exc:
+            raise RuntimeError(
+                'Install opencc-python-reimplemented to generate Traditional Chinese translations.'
+            ) from exc
+        traditional_chinese = OpenCC('s2twp')
     bundle['locales'].setdefault('en', {})
     saved_during_translation = False
     for locale in locales:
@@ -164,7 +177,15 @@ def translate_missing(manifest_path, bundle_path, locales, model_name, batch_siz
                     max_length=512,
                 )
             for (key, _), output in zip(batch, generated):
-                locale_map[key] = tokenizer.decode(output, skip_special_tokens=True).strip()
+                translated = tokenizer.decode(output, skip_special_tokens=True).strip()
+                if locale == 'zh-TW':
+                    translated = traditional_chinese.convert(translated)
+                if not translated:
+                    raise RuntimeError(
+                        f'The translation model returned an empty result for locale {locale} '
+                        f'and source key {key}.'
+                    )
+                locale_map[key] = translated
             write_json(bundle_path, bundle)
             saved_during_translation = True
             print(f'{locale}: translated {min(offset + len(batch), len(missing))}/{len(missing)}')

@@ -60,7 +60,7 @@
       aboutIntro: 'This curriculum search tool helps identify exactly what students are learning in literacy at a given school — including the curriculum, current module, essential questions, and book lists.',
       disclaimerLabel: 'Disclaimer:',
       disclaimerText: 'This tool is intended to provide general information about district and school curriculum implementation. Timelines and materials may vary by school or classroom. For the most accurate and up-to-date information, please contact your school directly.',
-      translationNotice: 'To make this site more accessible, we have used online resources to create the translation you are currently reading. We know that errors may exist, so we greatly appreciate your patience. Please submit a feedback form or contact your school officials if you come across major errors, so we can do out best to fixthem.',
+      translationNotice: 'To make this site more accessible, we have used generative artificial intelligence to create the translation you are currently reading. We acknowledge these translations are imperfect, so we greatly appreciate your understanding. Please submit a feedback form or contact your school officials if you come across major errors, so we can do our best to fix them.',
       filtersTitle: 'K-8 Find Your Curriculum',
       k8Program: 'K-8',
       prekProgram: 'Pre-K & 3K',
@@ -125,7 +125,7 @@
       aboutIntro: 'Esta herramienta ayuda a identificar exactamente lo que estudian los estudiantes en alfabetizacion en una escuela determinada, incluido el curriculo, el modulo actual, las preguntas esenciales y las listas de lectura.',
       disclaimerLabel: 'Aviso:',
       disclaimerText: 'Esta herramienta ofrece informacion general sobre la implementacion del curriculo por distrito y escuela. Los tiempos y materiales pueden variar segun la escuela o el salon. Para obtener la informacion mas precisa y actualizada, comunicate directamente con tu escuela.',
-      translationNotice: 'Para que este sitio sea más accesible, hemos utilizado recursos en línea para crear la traducción que está leyendo. Sabemos que puede haber errores y agradecemos mucho su paciencia. Envíe un formulario de comentarios si encuentra errores importantes para que podamos hacer todo lo posible por corregirlos.',
+      translationNotice: 'Para que este sitio sea más accesible, hemos utilizado inteligencia artificial generativa para crear la traducción que está leyendo. Reconocemos que estas traducciones son imperfectas y agradecemos mucho su comprensión. Envíe un formulario de comentarios o comuníquese con las autoridades de su escuela si encuentra errores importantes, para que podamos hacer todo lo posible por corregirlos.',
       filtersTitle: 'K-8: Encuentra tu curriculo',
       k8Program: 'K-8',
       prekProgram: 'Pre-K y 3K',
@@ -232,7 +232,7 @@
       aboutIntro: 'تساعدك أداة البحث هذه على معرفة ما يتعلمه الطلاب في القراءة والكتابة في مدارسهم، بما في ذلك المنهج والوحدة الحالية والأسئلة الأساسية وقوائم الكتب.',
       disclaimerLabel: 'إخلاء المسؤولية:',
       disclaimerText: 'تقدم هذه الأداة معلومات عامة عن تطبيق المناهج في المناطق والمدارس. قد تختلف المواعيد والمواد حسب المدرسة أو الصف. للحصول على أحدث المعلومات، يرجى التواصل مباشرة مع مدرستك.',
-      translationNotice: 'لجعل هذا الموقع أكثر سهولة في الاستخدام، استخدمنا موارد عبر الإنترنت لإنشاء الترجمة التي تقرأها الآن. نعلم أنه قد توجد أخطاء، ونقدّر صبرك كثيرًا. يُرجى إرسال نموذج الملاحظات إذا صادفت أخطاء كبيرة حتى نبذل قصارى جهدنا لتصحيحها.',
+      translationNotice: 'لجعل هذا الموقع أكثر سهولة في الاستخدام، استخدمنا الذكاء الاصطناعي التوليدي لإنشاء الترجمة التي تقرأها الآن. نقرّ بأن هذه الترجمات غير مثالية، ونقدّر تفهّمك كثيرًا. يُرجى إرسال نموذج الملاحظات أو التواصل مع مسؤولي مدرستك إذا صادفت أخطاء كبيرة، حتى نبذل قصارى جهدنا لإصلاحها.',
       prekMessage: 'يعمل فريق NYC Reads Curriculum Finder على إضافة موارد لطلاب 3K وPre-K. يرجى العودة لاحقًا للاطلاع على التحديثات. للمزيد من المعلومات الآن، راجع:',
       prekLink: 'Pre-K/3K: إنشاء روتين للقراءة',
       feedbackTitle: 'ساعدنا على التحسين',
@@ -297,7 +297,7 @@
       aboutIntro: 'এই টুলের মাধ্যমে শিক্ষার্থীরা স্কুলে সাক্ষরতার ক্ষেত্রে কী শিখছে—পাঠ্যক্রম, বর্তমান মডিউল, মূল প্রশ্ন ও বইয়ের তালিকা—তা খুঁজে পাওয়া যায়।',
       disclaimerLabel: 'দাবিত্যাগ:',
       disclaimerText: 'এই টুলে জেলা ও স্কুলের পাঠ্যক্রম বাস্তবায়ন সম্পর্কে সাধারণ তথ্য দেওয়া হয়। স্কুল বা শ্রেণিকক্ষ অনুযায়ী সময়সূচি ও উপকরণ ভিন্ন হতে পারে। সর্বশেষ তথ্যের জন্য সরাসরি স্কুলে যোগাযোগ করুন।',
-      translationNotice: 'এই সাইটটি আরও সহজলভ্য করতে, আপনি যে অনুবাদটি পড়ছেন তা তৈরি করতে আমরা অনলাইন সংস্থান ব্যবহার করেছি। আমরা জানি এতে ভুল থাকতে পারে, তাই আপনার ধৈর্যের জন্য আন্তরিকভাবে কৃতজ্ঞ। বড় কোনো ভুল চোখে পড়লে অনুগ্রহ করে মতামত ফর্ম জমা দিন, যাতে আমরা যথাসাধ্য সংশোধন করতে পারি।',
+      translationNotice: 'এই সাইটটি আরও সহজলভ্য করতে, আপনি যে অনুবাদটি পড়ছেন তা তৈরি করতে আমরা জেনারেটিভ কৃত্রিম বুদ্ধিমত্তা ব্যবহার করেছি। আমরা স্বীকার করি যে এই অনুবাদগুলো নিখুঁত নয়, তাই আপনার বোঝাপড়ার জন্য আন্তরিকভাবে কৃতজ্ঞ। বড় কোনো ভুল চোখে পড়লে অনুগ্রহ করে মতামত ফর্ম জমা দিন অথবা আপনার স্কুলের কর্মকর্তাদের সঙ্গে যোগাযোগ করুন, যাতে আমরা যথাসাধ্য তা সংশোধন করতে পারি।',
       prekMessage: 'NYC Reads Curriculum Finder টিম 3K ও প্রি-K শিক্ষার্থীদের জন্য উপকরণ যোগ করার কাজ করছে। আপডেটের জন্য পরে আবার দেখুন। আপাতত আরও তথ্য এখানে:',
       prekLink: 'প্রি-K/3K: পড়ার অভ্যাস গড়ে তুলুন',
       feedbackTitle: 'উন্নত করতে সাহায্য করুন',
@@ -362,7 +362,7 @@
       aboutIntro: 'Cet outil aide à découvrir ce que les élèves apprennent en lecture et en écriture dans une école : programme, module actuel, questions essentielles et listes de livres.',
       disclaimerLabel: 'Avertissement :',
       disclaimerText: 'Cet outil fournit des informations générales sur les programmes des districts et des écoles. Les calendriers et les ressources peuvent varier. Pour obtenir les informations les plus récentes, contactez directement votre école.',
-      translationNotice: 'Pour rendre ce site plus accessible, nous avons utilisé des ressources en ligne pour créer la traduction que vous lisez actuellement. Nous savons qu’elle peut contenir des erreurs et vous remercions de votre patience. Si vous repérez des erreurs importantes, veuillez envoyer le formulaire de commentaires afin que nous puissions faire de notre mieux pour les corriger.',
+      translationNotice: 'Pour rendre ce site plus accessible, nous avons utilisé l’intelligence artificielle générative pour créer la traduction que vous lisez actuellement. Nous reconnaissons que ces traductions sont imparfaites et vous remercions de votre compréhension. Si vous repérez des erreurs importantes, veuillez envoyer un formulaire de commentaires ou contacter les responsables de votre école afin que nous puissions faire de notre mieux pour les corriger.',
       prekMessage: 'L’équipe NYC Reads Curriculum Finder travaille à ajouter des ressources pour les élèves de 3K et Pré-K. Revenez plus tard pour les mises à jour. En attendant, consultez :',
       prekLink: 'Pré-K/3K : instaurer une routine de lecture',
       feedbackTitle: 'Aidez-nous à améliorer cet outil',
@@ -427,7 +427,7 @@
       aboutIntro: 'Zouti sa a ede w wè sa elèv yo ap aprann nan lekti ak ekriti nan yon lekòl: pwogram nan, modil aktyèl la, kesyon enpòtan yo ak lis liv yo.',
       disclaimerLabel: 'Nòt enpòtan:',
       disclaimerText: 'Zouti sa a bay enfòmasyon jeneral sou pwogram lekòl ak distri yo. Dat ak materyèl yo ka diferan selon lekòl oswa klas la. Pou enfòmasyon ki pi resan, kontakte lekòl ou dirèkteman.',
-      translationNotice: 'Pou rann sit sa a pi aksesib, nou itilize resous sou entènèt pou kreye tradiksyon w ap li kounye a. Nou konnen ka gen erè, epi nou apresye pasyans ou anpil. Tanpri voye yon fòm kòmantè si w jwenn gwo erè, pou nou ka fè tout sa nou kapab pou korije yo.',
+      translationNotice: 'Pou rann sit sa a pi aksesib, nou itilize entèlijans atifisyèl jeneratif pou kreye tradiksyon w ap li kounye a. Nou rekonèt tradiksyon sa yo pa pafè, epi nou apresye konpreyansyon ou anpil. Tanpri voye yon fòm kòmantè oswa kontakte responsab lekòl ou a si w jwenn gwo erè, pou nou ka fè tout sa nou kapab pou korije yo.',
       prekMessage: 'Ekip NYC Reads Curriculum Finder la ap travay pou ajoute resous pou timoun 3K ak Pre-K. Tounen pita pou jwenn mizajou. Pou kounye a, jwenn plis enfòmasyon isit la:',
       prekLink: 'Pre-K/3K: Kreye yon abitid lekti',
       feedbackTitle: 'Ede nou amelyore zouti a',
@@ -492,7 +492,7 @@
       aboutIntro: '이 도구를 사용하면 학교에서 학생들이 배우는 읽기·쓰기 교육과정, 현재 모듈, 핵심 질문 및 도서 목록을 확인할 수 있습니다.',
       disclaimerLabel: '안내:',
       disclaimerText: '이 도구는 교육구와 학교의 교육과정 운영에 관한 일반 정보를 제공합니다. 일정과 자료는 학교나 교실에 따라 다를 수 있습니다. 최신 정보는 학교에 직접 문의하세요.',
-      translationNotice: '이 사이트의 접근성을 높이기 위해 온라인 자료를 사용하여 현재 읽고 계신 번역을 만들었습니다. 오류가 있을 수 있음을 알고 있으며, 기다려 주셔서 진심으로 감사합니다. 큰 오류를 발견하시면 피드백 양식을 제출해 주세요. 최선을 다해 수정하겠습니다.',
+      translationNotice: '이 사이트의 접근성을 높이기 위해 생성형 인공지능을 사용하여 현재 읽고 계신 번역을 만들었습니다. 번역이 완벽하지 않다는 점을 인정하며, 이해해 주셔서 진심으로 감사합니다. 큰 오류를 발견하시면 피드백 양식을 제출하거나 학교 관계자에게 문의해 주세요. 최선을 다해 수정하겠습니다.',
       prekMessage: 'NYC Reads Curriculum Finder 팀은 3K 및 프리-K 자료를 추가하고 있습니다. 업데이트를 위해 나중에 다시 확인하세요. 우선 자세한 내용은 다음을 참고하세요:',
       prekLink: '프리-K/3K: 독서 습관 만들기',
       feedbackTitle: '개선을 도와주세요',
@@ -557,7 +557,7 @@
       aboutIntro: '此工具可帮助您了解学生在学校学习的读写内容，包括课程、当前单元、核心问题和书单。',
       disclaimerLabel: '免责声明：',
       disclaimerText: '此工具提供有关学区和学校课程实施的一般信息。时间安排和材料可能因学校或班级而异。请直接联系学校以获取最新信息。',
-      translationNotice: '为了让本网站更易于使用，我们使用在线资源制作了您正在阅读的译文。我们知道译文可能存在错误，非常感谢您的耐心。如果您发现重大错误，请提交反馈表，以便我们尽力修正。',
+      translationNotice: '为了让本网站更易于使用，我们使用生成式人工智能制作了您正在阅读的译文。我们承认这些译文并不完美，非常感谢您的理解。如果您发现重大错误，请提交反馈表或联系学校工作人员，以便我们尽力修正。',
       prekMessage: 'NYC Reads Curriculum Finder 团队正在为 3K 和学前班学生添加资源。请稍后查看更新。目前可在此了解更多信息：',
       prekLink: '学前班/3K：建立阅读习惯',
       feedbackTitle: '帮助我们改进',
@@ -622,7 +622,7 @@
       aboutIntro: 'С помощью этого инструмента можно узнать, что ученики изучают в школе по чтению и письму: программу, текущий модуль, основные вопросы и списки книг.',
       disclaimerLabel: 'Отказ от ответственности:',
       disclaimerText: 'Инструмент содержит общую информацию о программах округов и школ. Сроки и материалы могут различаться. Чтобы узнать актуальную информацию, свяжитесь со школой напрямую.',
-      translationNotice: 'Чтобы сделать сайт доступнее, мы использовали онлайн-ресурсы для создания перевода, который вы сейчас читаете. Мы понимаем, что в нем могут быть ошибки, и благодарим вас за терпение. Если вы заметили серьезные ошибки, отправьте форму отзыва, чтобы мы могли постараться их исправить.',
+      translationNotice: 'Чтобы сделать сайт доступнее, мы использовали генеративный искусственный интеллект для создания перевода, который вы сейчас читаете. Мы признаём, что эти переводы несовершенны, и благодарим вас за понимание. Если вы заметили серьезные ошибки, отправьте форму отзыва или свяжитесь с представителями школы, чтобы мы могли постараться их исправить.',
       prekMessage: 'Команда NYC Reads Curriculum Finder добавляет материалы для учеников 3K и Pre-K. Позже вернитесь за обновлениями. А пока дополнительная информация доступна здесь:',
       prekLink: 'Pre-K/3K: формируем привычку читать',
       feedbackTitle: 'Помогите нам улучшить сервис',
@@ -687,7 +687,7 @@
       aboutIntro: 'یہ ٹول آپ کو یہ جاننے میں مدد دیتا ہے کہ اسکول میں طلبہ خواندگی کے لیے کیا سیکھ رہے ہیں، بشمول نصاب، موجودہ ماڈیول، بنیادی سوالات اور کتابوں کی فہرست۔',
       disclaimerLabel: 'وضاحت:',
       disclaimerText: 'یہ ٹول ضلع اور اسکول میں نصاب کے نفاذ کے بارے میں عمومی معلومات فراہم کرتا ہے۔ اوقات اور مواد اسکول یا کلاس کے لحاظ سے مختلف ہو سکتے ہیں۔ تازہ ترین معلومات کے لیے اپنے اسکول سے براہ راست رابطہ کریں۔',
-      translationNotice: 'اس سائٹ کو مزید قابلِ رسائی بنانے کے لیے، ہم نے آپ کے پڑھے جانے والے ترجمے کی تیاری میں آن لائن وسائل استعمال کیے ہیں۔ ہمیں معلوم ہے کہ اس میں غلطیاں ہو سکتی ہیں، اور ہم آپ کے صبر کے لیے تہہ دل سے شکر گزار ہیں۔ اگر آپ کو بڑی غلطیاں نظر آئیں تو براہِ کرم رائے کا فارم جمع کریں تاکہ ہم انہیں درست کرنے کی پوری کوشش کر سکیں۔',
+      translationNotice: 'اس سائٹ کو مزید قابلِ رسائی بنانے کے لیے، ہم نے آپ کے پڑھے جانے والے ترجمے کی تیاری میں تخلیقی مصنوعی ذہانت استعمال کی ہے۔ ہم تسلیم کرتے ہیں کہ یہ ترجمے مکمل طور پر درست نہیں، اور آپ کی سمجھ بوجھ کے لیے تہہ دل سے شکر گزار ہیں۔ اگر آپ کو بڑی غلطیاں نظر آئیں تو براہِ کرم رائے کا فارم جمع کریں یا اپنے اسکول کے حکام سے رابطہ کریں تاکہ ہم انہیں درست کرنے کی پوری کوشش کر سکیں۔',
       prekMessage: 'NYC Reads Curriculum Finder ٹیم 3K اور پری-K طلبہ کے لیے وسائل شامل کر رہی ہے۔ تازہ معلومات کے لیے بعد میں دوبارہ دیکھیں۔ فی الحال مزید معلومات یہاں ہیں:',
       prekLink: 'پری-K/3K: مطالعے کا معمول بنائیں',
       feedbackTitle: 'بہتری میں ہماری مدد کریں',
@@ -861,6 +861,16 @@
   function t(key) {
     const lang = state.selectedLanguage || 'en';
     return (translations[lang] && translations[lang][key]) || translations.en[key] || key;
+  }
+
+  async function loadAdditionalTranslations() {
+    const response = await fetch('/translations/additional.json', { cache: 'no-cache' });
+    if (!response.ok) {
+      throw new Error('Failed to load additional language translations');
+    }
+    const additional = await response.json();
+    Object.assign(translations, additional.interface || {});
+    Object.assign(parentCaregiverTranslations, additional.parentCaregiver || {});
   }
 
   function getStoredLanguage() {
@@ -1785,6 +1795,11 @@
   }
 
   (async function boot() {
+    try {
+      await loadAdditionalTranslations();
+    } catch (err) {
+      console.error('Failed to load additional language translations', err);
+    }
     state.selectedLanguage = getStoredLanguage();
     if (els.language) els.language.value = state.selectedLanguage;
     applyLanguage();
