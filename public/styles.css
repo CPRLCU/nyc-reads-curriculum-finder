@@ -9,6 +9,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 
 .site-header { display:none; }
 
+.language-bar { background: #0b1d4a; color: #fff; }
+.language-bar-inner { min-height: 48px; display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+.language-bar label { font-size: 14px; font-weight: 600; }
+.language-bar select { min-width: 160px; min-height: 36px; padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; color: #111827; font: inherit; }
+.language-bar select:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+
 /* Hero header */
 .hero{
   position: relative;
@@ -49,6 +55,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
   .hero{ height: var(--hero-h-mobile); }
   .hero .container { grid-template-columns: 1fr; text-align:center; justify-items:center; }
   .hero-text{ text-align:center; }
+  .language-bar-inner { padding: 6px 16px; }
 }
 
 .hero-contained { padding-top: 12px; padding-bottom: 10px; }
@@ -71,6 +78,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 .prek-resources p { margin: 0; }
 .prek-resources a { color: #1D4ED8; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 [hidden] { display: none !important; }
+
+html[dir="rtl"] body { direction: rtl; }
+html[dir="rtl"] .language-bar-inner { justify-content: flex-start; }
+html[dir="rtl"] .filter label .hint { margin-left: 0; margin-right: 6px; }
+html[dir="rtl"] .data-table thead th { text-align: right; }
+html[dir="rtl"] .pill { margin: 4px 0 0 8px; }
 
 .layout { display: grid; grid-template-columns: 320px 1fr; gap: 16px; align-items: start; margin-top: 16px; }
 .filters { position: static; box-shadow: none; }
@@ -169,6 +182,7 @@ details.about-more:not([open]) > summary::after { content:" ↓"; }
 
 /* Blue info note */
 .info-note { margin-top: 6px; padding: 12px 14px; border-radius: 10px; background: #EFF6FF; border: 1px solid #DBEAFE; color: #0F172A; font-size: 14px; line-height: 1.45; }
+.translation-notice { margin: 8px 0 0; padding: 10px 14px; border-inline-start: 3px solid #64748b; color: #475569; font-size: 13px; line-height: 1.5; }
 
 /* Disclaimer bar */
 .disclaimer { background: #F3F4F6; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB; }
@@ -209,6 +223,7 @@ details.about-more:not([open]) > summary::after { content:" ↓"; }
   font-size: 13px;
   line-height: 1.35;
 }
+.translated-book-title { color: #475569; }
 
 /* Book list items with thumbnails */
 .book-list { list-style: none; padding: 0; margin: 0; }

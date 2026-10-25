@@ -1,10 +1,12 @@
 import csv
+import hashlib
 import io
 import json
 import os
 import re
 import time
 import logging
+from functools import lru_cache
 from datetime import date
 from urllib.parse import urlencode
 
@@ -17,6 +19,11 @@ except Exception:  # noqa: BLE001
 
 logger = logging.getLogger("api")
 logger.setLevel(logging.INFO)
+
+CURRICULUM_TRANSLATION_LOCALES = ('ar', 'bn', 'fr', 'ht', 'ko', 'zh', 'ru', 'es', 'ur')
+CURRICULUM_TRANSLATIONS_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)), 'data', 'curriculum_translations.json'
+)
 
 # Track last-seen header order for logging/index mapping
 LAST_PACING_HEADERS_ORDER = []
@@ -116,6 +123,61 @@ def _csv_from_text(text):
 
 def normalize_text(s):
     return (s or '').replace('’', "'").replace('“', '"').replace('”', '"').strip()
+
+
+def curriculum_text_key(text: str) -> str:
+    normalized = normalize_text(text)
+    return hashlib.sha256(normalized.encode('utf-8')).hexdigest()
+
+
+def _load_curriculum_translations():
+    try:
+        stat = os.stat(CURRICULUM_TRANSLATIONS_PATH)
+    except FileNotFoundError:
+        logger.warning('Curriculum translation bundle is missing: %s', CURRICULUM_TRANSLATIONS_PATH)
+        return {}
+    except OSError as exc:
+        logger.error('Unable to inspect curriculum translation bundle: %s', exc)
+        return {}
+    return _load_curriculum_translations_file(
+        CURRICULUM_TRANSLATIONS_PATH,
+        stat.st_mtime_ns,
+        stat.st_size,
+    )
+
+
+@lru_cache(maxsize=2)
+def _load_curriculum_translations_file(path: str, modified_ns: int, file_size: int):
+    try:
+        with open(path, encoding='utf-8') as translation_file:
+            data = json.load(translation_file)
+    except (OSError, json.JSONDecodeError) as exc:
+        logger.error('Unable to load curriculum translation bundle: %s', exc)
+        return {}
+    if not isinstance(data, dict) or data.get('schema_version') != 1:
+        logger.error('Curriculum translation bundle has an unsupported schema')
+        return {}
+    locales = data.get('locales')
+    return locales if isinstance(locales, dict) else {}
+
+
+def _localized_curriculum_text(text: str, locale: str) -> str:
+    if locale not in CURRICULUM_TRANSLATION_LOCALES or not text:
+        return ''
+    translations = _load_curriculum_translations().get(locale, {})
+    if not isinstance(translations, dict):
+        return ''
+    translated = translations.get(curriculum_text_key(text), '')
+    return translated if isinstance(translated, str) else ''
+
+
+def _curriculum_translation_fields(texts: dict, locale: str) -> dict:
+    translated_fields = {
+        field: translated
+        for field, source in texts.items()
+        if (translated := _localized_curriculum_text(source, locale))
+    }
+    return translated_fields
 
 
 def split_genres(s: str):
@@ -716,7 +778,7 @@ def build_meta(debug: bool = False):
     return meta
 
 
-def build_modules(curriculum: str, grade: str):
+def build_modules(curriculum: str, grade: str, language: str = 'en'):
     if not curriculum or not grade:
         return {'modules': []}
     try:
@@ -745,12 +807,16 @@ def build_modules(curriculum: str, grade: str):
         except Exception:
             m = re.search(r"(\d+)", str(module_number))
             num = int(m.group(1)) if m else 0
-        modules.append({
+        module = {
             'module_number': num,
             'module_title': module_title,
             'start_md': start_md,
             'end_md': end_md,
-        })
+        }
+        translated_fields = _curriculum_translation_fields({'module_title': module_title}, language)
+        if translated_fields:
+            module['translations'] = {language: translated_fields}
+        modules.append(module)
     modules.sort(key=lambda m: int(m.get('module_number') or 0))
     return {'modules': modules}
 
@@ -760,6 +826,7 @@ def build_search(params: dict):
     q_district = (params.get('district') or '').strip()
     q_school = (params.get('school') or '').strip()
     q_grade = (params.get('grade') or '').strip()
+    language = (params.get('language') or 'en').strip().lower()
     debug_flag = str(params.get('debug') or '').lower() in ('1', 'true', 'yes')
     ref = None
     try:
@@ -946,6 +1013,21 @@ def build_search(params: dict):
             'books_json': json.dumps(books_items, ensure_ascii=False),
             'books_source': 'enumerated_strict',
         }
+        if language in CURRICULUM_TRANSLATION_LOCALES:
+            translated_fields = _curriculum_translation_fields({
+                'module_title': module_title,
+                'essential_question': essential_question,
+                'text_genres': text_genres,
+            }, language)
+            translated_books = {
+                book['title']: translated
+                for book in books_items
+                if (translated := _localized_curriculum_text(book['title'], language))
+            }
+            if translated_books:
+                translated_fields['books'] = translated_books
+            if translated_fields:
+                item['translations'] = {language: translated_fields}
         if ref is not None:
             item['dateRange'] = {'start': start_iso, 'end': end_iso}
         results.append(item)

@@ -11,6 +11,23 @@
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
+    <div class="language-bar">
+      <div class="container language-bar-inner">
+        <label for="languageSelect" id="languageLabel">Language</label>
+        <select id="languageSelect" aria-label="Language">
+          <option value="ar">العربية</option>
+          <option value="bn">বাংলা</option>
+          <option value="en" selected>English</option>
+          <option value="fr">Français</option>
+          <option value="ht">Kreyòl Ayisyen</option>
+          <option value="ko">한국어</option>
+          <option value="zh">中文</option>
+          <option value="ru">Русский</option>
+          <option value="es">Español</option>
+          <option value="ur">اردو</option>
+        </select>
+      </div>
+    </div>
     <header class="hero-contained">
       <div class="container">
         <div class="hero-frame">
@@ -37,6 +54,7 @@
           <div class="info-note" id="disclaimerNote">
             <strong id="disclaimerLabel">Disclaimer:</strong> <span id="disclaimerText">This tool is intended to provide general information about district and school curriculum implementation. Timelines and materials may vary by school or classroom. For the most accurate and up-to-date information, please contact your school directly.</span>
           </div>
+          <p id="translationNotice" class="translation-notice" hidden></p>
         </div>
       </div>
     </section>
@@ -81,14 +99,6 @@
               <option value="OST/Afterschool Provider">OST/Afterschool Provider</option>
               <option value="Parent or Caregiver">Parent or Caregiver</option>
               <option value="School Leader or Teacher">School Leader or Teacher</option>
-            </select>
-          </div>
-
-          <div class="filter">
-            <label for="languageSelect" id="languageLabel">Language</label>
-            <select id="languageSelect">
-              <option value="en">English</option>
-              <option value="es">Espanol</option>
             </select>
           </div>
 
@@ -141,6 +151,6 @@
       </div>
     </noscript>
 
-    <script src="/scripts/app.js?v=20260512-ost-reading-list-update" defer></script>
+    <script src="/scripts/app.js?v=20261016-book-links" defer></script>
   </body>
   </html>
