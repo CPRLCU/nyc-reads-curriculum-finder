@@ -75,7 +75,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 .program-button:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
 .prek-resources { line-height: 1.6; }
 .prek-resources h2 { margin-bottom: 12px; }
-.prek-resources p { margin: 0; }
+.prek-resources p { margin: 0 0 12px; }
+.prek-resources ul { margin: 0 0 12px; padding-left: 24px; }
+.prek-resources > :last-child { margin-bottom: 0; }
 .prek-resources a { color: #1D4ED8; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 [hidden] { display: none !important; }
 

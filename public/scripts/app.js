@@ -67,6 +67,19 @@
       prekTitle: 'Pre-K & 3K Resources',
       prekMessage: 'The NYC Reads Curriculum Finder Team is actively working to incorporate resources for 3K and Pre-K students into our website. Please check back in the future for updates. For now, you can find more information at: ',
       prekLink: 'Pre-K/3K Build a Reading Routine',
+      prekHeading: 'Early Literacy Starts at Birth',
+      prekIntroOne: 'Children build the foundations for reading, writing, and lifelong learning long before kindergarten. Through play, everyday experiences, and meaningful connections, children communicate in many ways, including home languages, words, gestures, and expressions, while building confidence, relationships, and social-emotional skills in safe, nurturing environments.',
+      prekIntroTwo: "In 3-K and Pre-K, early literacy is part of a broader, play-based curriculum that supports all areas of a child's learning and development. Children develop language and literacy as they play, explore, create, solve problems, talk, listen, draw, write, and share stories with others.",
+      prekActivitiesIntro: 'You can help your child learn and grow when you:',
+      prekActivityOne: 'Connect, listen, and communicate through home languages, words, gestures, sounds, and expressions to share ideas, build language, and lay the foundation for reading and writing.',
+      prekActivityTwo: 'Sing songs and rhymes to help your child hear the sounds and patterns in words.',
+      prekActivityThree: 'Read books and tell stories together, sharing what you notice and wonder.',
+      prekActivityFour: 'Together, notice letters, symbols, and signs in books and the world around you.',
+      prekActivityFive: 'Play, pretend, create, and explore together to build language, knowledge, curiosity, and problem-solving.',
+      prekActivitySix: 'Encourage drawing, scribbling, making marks, and early writing as ways for your child to share ideas, tell stories, and communicate.',
+      prekActivitySeven: 'Use your home language through words, gestures, signs, songs, stories, and play to connect, communicate, and learn together.',
+      prekClosing: 'Every child learns and grows in their own way. These everyday moments help build a strong foundation for reading and writing.',
+      prekResourcesIntro: 'Explore the books and resources below to find more ways to read, communicate, and learn together:',
       districtLabel: 'District',
       schoolLabel: 'School',
       schoolPlaceholder: 'Type to search schools…',
@@ -869,7 +882,12 @@
       throw new Error('Failed to load additional language translations');
     }
     const additional = await response.json();
-    Object.assign(translations, additional.interface || {});
+    Object.keys(additional.interface || {}).forEach(locale => {
+      translations[locale] = Object.assign(
+        translations[locale] || {},
+        additional.interface[locale]
+      );
+    });
     Object.assign(parentCaregiverTranslations, additional.parentCaregiver || {});
   }
 
@@ -1031,8 +1049,22 @@
     setText('k8ProgramButton', t('k8Program'));
     setText('prekProgramButton', t('prekProgram'));
     setText('prekTitle', t('prekTitle'));
-    setText('prekMessage', t('prekMessage'));
     setText('prekResourceLink', t('prekLink'));
+    [
+      'prekHeading',
+      'prekIntroOne',
+      'prekIntroTwo',
+      'prekActivitiesIntro',
+      'prekActivityOne',
+      'prekActivityTwo',
+      'prekActivityThree',
+      'prekActivityFour',
+      'prekActivityFive',
+      'prekActivitySix',
+      'prekActivitySeven',
+      'prekClosing',
+      'prekResourcesIntro',
+    ].forEach(id => setText(id, t(id)));
     setText('districtLabel', t('districtLabel'));
     setText('schoolLabel', t('schoolLabel'));
     setText('gradeLabel', t('gradeLabel'));

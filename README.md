@@ -55,7 +55,7 @@ py scripts/translate_curriculum.py translate
 
 The export command fetches the current pacing-guide sheet and writes unique source strings to `data/curriculum_translation_sources.json`. The translate command uses Meta's [MIT-licensed M2M100 model](https://huggingface.co/facebook/m2m100_418M) to add missing entries to `data/curriculum_translations.json` for Albanian, Arabic, Bangla, French, Haitian Creole, Korean, Mandarin Chinese (Simplified and Traditional), Russian, Spanish, Ukrainian, Urdu, and Uzbek. Traditional Chinese is generated from the model's Chinese output using OpenCC. The command reuses existing entries so unchanged source text is not translated again. Review machine-generated educational text and title translations with fluent speakers before committing the bundle. If the tokenizer does not support a requested language code, the command stops with an error rather than silently substituting another translation.
 
-The interface and parent/caregiver guidance translations for Albanian, Traditional Chinese, Ukrainian, and Uzbek are stored in `public/translations/additional.json` and loaded by the site for those language choices.
+Additional interface and parent/caregiver guidance translations for Albanian, Traditional Chinese, Ukrainian, and Uzbek are stored in `public/translations/additional.json` and loaded by the site for those language choices. The Pre-K and 3K section copy is also stored in this bundle for all thirteen supported non-English languages; its English defaults are in `public/scripts/app.js`.
 
 #### Updating curriculum data and translations
 
