@@ -72,13 +72,14 @@ def test_unavailable_curriculum_response_has_safe_rendering_contract(monkeypatch
 def test_build_search_returns_saved_translations_and_keeps_original_book_title(monkeypatch):
     module_title = 'Building a Community of Learners'
     question = 'How do we become a community of learners?'
-    genres = 'Informational text'
+    genres = 'Informational Text\nPoetry'
     book_title = 'The Name Jar'
     translations = {
         'fr': {
             _shared.curriculum_text_key(module_title): 'Créer une communauté d’apprenants',
             _shared.curriculum_text_key(question): 'Comment créer une communauté d’apprenants ?',
-            _shared.curriculum_text_key(genres): 'Texte informatif',
+            _shared.curriculum_text_key('Informational Text'): 'Texte informatif',
+            _shared.curriculum_text_key('Poetry'): 'Poésie',
             _shared.curriculum_text_key(book_title): 'Le bocal des prénoms',
         }
     }
@@ -113,29 +114,96 @@ def test_build_search_returns_saved_translations_and_keeps_original_book_title(m
     assert result['books'][0]['title'] == book_title
     assert result['translations']['fr']['module_title'] == 'Créer une communauté d’apprenants'
     assert result['translations']['fr']['essential_question'] == 'Comment créer une communauté d’apprenants ?'
-    assert result['translations']['fr']['text_genres'] == 'Texte informatif'
+    assert result['translations']['fr']['genres'] == ['Texte informatif', 'Poésie']
     assert result['translations']['fr']['books'][book_title] == 'Le bocal des prénoms'
+
+
+def test_split_genres_reassembles_and_separates_descriptors():
+    assert _shared.split_genres(
+        'Informational\nText Literary\nText\nNarrative\nNonfiction\nFantasy, Poetry\n'
+        'Fiction/Fantasy\nHistorical\nAccounts\nFiction Video'
+    ) == [
+        'Informational Text',
+        'Literary Text',
+        'Narrative Nonfiction',
+        'Fantasy',
+        'Poetry',
+        'Fiction',
+        'Historical Accounts',
+        'Fiction Video',
+    ]
+
+
+def test_traditional_chinese_locale_is_canonicalized_and_translated(monkeypatch):
+    title = 'The Solar System'
+    translation = '太陽系'
+    monkeypatch.setattr(_shared, '_fetch_pacing_csv', lambda: [{
+        'curriculum': 'HMH Into Reading',
+        'grade_level': '4',
+        'module': '1',
+        'theme': title,
+        'start_md': '08-01',
+        'end_md': '09-15',
+    }])
+    monkeypatch.setattr(_shared, '_load_curriculum_translations', lambda: {
+        'zh-TW': {_shared.curriculum_text_key(title): translation}
+    })
+
+    response = _shared.build_modules('HMH Into Reading', '4', 'zh-tw')
+
+    assert _shared.normalize_locale('ZH-tw') == 'zh-TW'
+    assert response['modules'][0]['translations']['zh-TW']['module_title'] == translation
 
 
 def test_build_modules_includes_saved_module_title_translation(monkeypatch):
     title = 'The Renaissance'
-    translation = 'La Renaissance'
-    monkeypatch.setattr(_shared, '_fetch_pacing_csv', lambda: [{
+    question = 'What changed during the Renaissance?'
+    book_title = 'The Renaissance Begins'
+    rows = [{
         'curriculum': 'HMH Into Reading',
         'grade_level': '4',
         'module': '2',
         'theme': title,
+        'essential_questions': question,
+        'text_genres': 'Fiction\nPoetry',
         'start_md': '10-01',
         'end_md': '11-15',
-    }])
+        'reading_list_1': book_title,
+    }, {
+        'curriculum': 'HMH Into Reading',
+        'grade_level': '4',
+        'module': '3',
+        'theme': 'The Solar System',
+        'essential_questions': 'How do planets move?',
+        'text_genres': 'Informational Text',
+        'start_md': '11-16',
+        'end_md': '12-31',
+        'reading_list_1': 'Planet Earth',
+    }]
+    monkeypatch.setattr(_shared, '_fetch_pacing_csv', lambda: rows)
     monkeypatch.setattr(_shared, '_load_curriculum_translations', lambda: {
-        'fr': {_shared.curriculum_text_key(title): translation}
+        'fr': {
+            _shared.curriculum_text_key(title): 'La Renaissance',
+            _shared.curriculum_text_key(question): 'Qu’est-ce qui a changé pendant la Renaissance ?',
+            _shared.curriculum_text_key('Fiction'): 'Fiction française',
+            _shared.curriculum_text_key('Poetry'): 'Poésie française',
+            _shared.curriculum_text_key(book_title): 'Le début de la Renaissance',
+        }
     })
 
     response = _shared.build_modules('HMH Into Reading', '4', 'fr')
 
     assert response['modules'][0]['module_title'] == title
-    assert response['modules'][0]['translations']['fr']['module_title'] == translation
+    first_module = response['modules'][0]
+    second_module = response['modules'][1]
+    assert first_module['translations']['fr']['module_title'] == 'La Renaissance'
+    assert first_module['essential_question'] == question
+    assert first_module['translations']['fr']['essential_question'] == 'Qu’est-ce qui a changé pendant la Renaissance ?'
+    assert first_module['translations']['fr']['genres'] == ['Fiction française', 'Poésie française']
+    assert first_module['translations']['fr']['books'][book_title] == 'Le début de la Renaissance'
+    assert second_module['essential_question'] == 'How do planets move?'
+    assert second_module['genres'] == ['Informational Text']
+    assert second_module['books'][0]['title'] == 'Planet Earth'
 
 
 def test_search_and_module_routes_forward_selected_language(monkeypatch):
