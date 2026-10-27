@@ -132,6 +132,29 @@
         <p><span id="prekResourcesIntro">Explore the books and resources below to find more ways to read, communicate, and learn together:</span> <a id="prekResourceLink" href="https://static1.squarespace.com/static/6a14f58b81e7ae70ef22efbb/t/6a9a59d31962e811c3634866/1788500435796/NYC+Reads+Together+Build+a+Routine+With+Your+Young+Reader.pdf" target="_blank" rel="noopener noreferrer">Pre-K/3K Build a Reading Routine</a>.</p>
       </section>
 
+      <section id="prekReadingList" class="card section reading-list-card" aria-labelledby="readingListHeading" hidden>
+        <h2 id="readingListHeading">Reading List</h2>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Creators</th>
+                <th scope="col">ISBN</th>
+              </tr>
+            </thead>
+            <tbody id="readingListRows">
+              <tr><td colspan="3">Loading reading list…</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="reading-list-pagination" aria-label="Reading list pages">
+          <button id="readingListBack" type="button" class="btn btn-secondary" disabled>‹ Back</button>
+          <p id="readingListPageStatus" class="results-meta" aria-live="polite"></p>
+          <button id="readingListNext" type="button" class="btn btn-secondary" disabled>Next ›</button>
+        </div>
+      </section>
+
       <div id="resultsDivider" class="divider" role="separator" aria-hidden="true"></div>
 
       <section id="results" class="section" aria-label="Curriculum Information">

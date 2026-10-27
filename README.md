@@ -7,6 +7,8 @@ Search NYC schools by date, district, school, and grade to instantly see:
 - Essential question
 - Book list
 
+The Pre-K & 3K program includes early childhood resources and a reading list sourced from `public/data/reading_list.json`, displayed 30 titles per page.
+
 ## Quick start
 
 Serve the folder locally:

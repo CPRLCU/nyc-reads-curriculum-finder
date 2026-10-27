@@ -79,6 +79,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 .prek-resources ul { margin: 0 0 12px; padding-left: 24px; }
 .prek-resources > :last-child { margin-bottom: 0; }
 .prek-resources a { color: #1D4ED8; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.reading-list-card { line-height: 1.5; }
+.reading-list-card .table-wrapper { max-height: 720px; overflow: auto; }
+.reading-list-card .data-table { min-width: 640px; }
+.reading-list-pagination { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; }
+.reading-list-pagination .results-meta { margin: 0; text-align: center; }
 [hidden] { display: none !important; }
 
 html[dir="rtl"] body { direction: rtl; }

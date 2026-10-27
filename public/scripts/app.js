@@ -29,6 +29,11 @@
     prekProgramButton: document.getElementById('prekProgramButton'),
     filters: document.getElementById('filters'),
     prekResources: document.getElementById('prekResources'),
+    prekReadingList: document.getElementById('prekReadingList'),
+    readingListRows: document.getElementById('readingListRows'),
+    readingListBack: document.getElementById('readingListBack'),
+    readingListNext: document.getElementById('readingListNext'),
+    readingListPageStatus: document.getElementById('readingListPageStatus'),
     resultsDivider: document.getElementById('resultsDivider'),
     results: document.getElementById('results'),
     feedbackSection: document.getElementById('feedbackSection'),
@@ -50,7 +55,11 @@
     lastContext: null,
     lastDetails: { eq: [], genres: [], books: [] },
     selectedProgram: 'k8',
+    readingList: [],
+    readingListPage: 0,
   };
+
+  const readingListPageSize = 30;
 
   const translations = {
     en: {
@@ -1049,7 +1058,10 @@
     setText('k8ProgramButton', t('k8Program'));
     setText('prekProgramButton', t('prekProgram'));
     setText('prekTitle', t('prekTitle'));
+    setText('readingListHeading', t('readingList'));
     setText('prekResourceLink', t('prekLink'));
+    setText('readingListBack', t('prevBtn'));
+    setText('readingListNext', t('nextBtn'));
     [
       'prekHeading',
       'prekIntroOne',
@@ -1808,6 +1820,90 @@
     if (els.prekProgramButton) els.prekProgramButton.addEventListener('click', () => selectProgram('prek'));
   }
 
+  function renderReadingListPage() {
+    if (!els.readingListRows) return;
+    els.readingListRows.replaceChildren();
+
+    const total = state.readingList.length;
+    const start = state.readingListPage * readingListPageSize;
+    const pageEntries = state.readingList.slice(start, start + readingListPageSize);
+    if (!total) {
+      const row = document.createElement('tr');
+      const cell = document.createElement('td');
+      cell.colSpan = 3;
+      cell.textContent = 'No reading list titles are available.';
+      row.appendChild(cell);
+      els.readingListRows.appendChild(row);
+    } else {
+      pageEntries.forEach(book => {
+        const row = document.createElement('tr');
+        [book.title, book.creators, book.isbn].forEach(value => {
+          const cell = document.createElement('td');
+          cell.textContent = value || '';
+          row.appendChild(cell);
+        });
+        els.readingListRows.appendChild(row);
+      });
+    }
+
+    const end = Math.min(start + pageEntries.length, total);
+    if (els.readingListPageStatus) {
+      els.readingListPageStatus.textContent = total
+        ? `Showing ${start + 1}–${end} of ${total}`
+        : '';
+    }
+    if (els.readingListBack) els.readingListBack.disabled = state.readingListPage === 0;
+    if (els.readingListNext) els.readingListNext.disabled = end >= total;
+  }
+
+  async function loadReadingList() {
+    try {
+      const response = await fetch('/data/reading_list.json', { cache: 'no-cache' });
+      if (!response.ok) throw new Error(`Failed to load reading list (${response.status})`);
+      const entries = await response.json();
+      if (!Array.isArray(entries) || entries.some(book =>
+        !book || typeof book.title !== 'string'
+        || typeof book.creators !== 'string' || typeof book.isbn !== 'string'
+      )) {
+        throw new Error('Reading list data has an invalid format');
+      }
+      state.readingList = entries;
+      renderReadingListPage();
+    } catch (error) {
+      console.error('Unable to load the Pre-K & 3K reading list', error);
+      if (els.readingListRows) {
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        cell.colSpan = 3;
+        cell.textContent = 'Unable to load the reading list. Please try again later.';
+        row.appendChild(cell);
+        els.readingListRows.replaceChildren(row);
+      }
+      if (els.readingListPageStatus) els.readingListPageStatus.textContent = '';
+      if (els.readingListBack) els.readingListBack.disabled = true;
+      if (els.readingListNext) els.readingListNext.disabled = true;
+    }
+  }
+
+  function bindReadingListEvents() {
+    if (els.readingListBack) {
+      els.readingListBack.addEventListener('click', () => {
+        if (state.readingListPage > 0) {
+          state.readingListPage--;
+          renderReadingListPage();
+        }
+      });
+    }
+    if (els.readingListNext) {
+      els.readingListNext.addEventListener('click', () => {
+        if ((state.readingListPage + 1) * readingListPageSize < state.readingList.length) {
+          state.readingListPage++;
+          renderReadingListPage();
+        }
+      });
+    }
+  }
+
   function selectProgram(program) {
     state.selectedProgram = program;
     const isK8 = program === 'k8';
@@ -1821,6 +1917,7 @@
     }
     if (els.filters) els.filters.hidden = !isK8;
     if (els.prekResources) els.prekResources.hidden = isK8;
+    if (els.prekReadingList) els.prekReadingList.hidden = isK8;
     if (els.resultsDivider) els.resultsDivider.hidden = !isK8;
     if (els.results) els.results.hidden = !isK8;
     if (els.feedbackSection) els.feedbackSection.hidden = !isK8;
@@ -1841,6 +1938,8 @@
     if (els.grade) setOptions(els.grade, [], t('allGrades'));
     setDefaultDate();
     bindProgramEvents();
+    bindReadingListEvents();
+    loadReadingList();
     console.log('[Boot] Default date set', els.date ? els.date.value : null);
     await loadMeta();
     console.log('[Boot] loadMeta complete', {
