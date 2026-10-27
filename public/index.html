@@ -115,7 +115,44 @@
 
       <section id="prekResources" class="card section prek-resources" aria-labelledby="prekTitle" hidden>
         <h2 id="prekTitle">Pre-K &amp; 3K Resources</h2>
-        <p><span id="prekMessage">The NYC Reads Curriculum Finder Team is actively working to incorporate resources for 3K and Pre-K students into our website. Please check back in the future for updates. For now, you can find more information at: </span><a id="prekResourceLink" href="https://static1.squarespace.com/static/6a14f58b81e7ae70ef22efbb/t/6a9a59d31962e811c3634866/1788500435796/NYC+Reads+Together+Build+a+Routine+With+Your+Young+Reader.pdf" target="_blank" rel="noopener noreferrer">Pre-K/3K Build a Reading Routine</a>.</p>
+        <h3 id="prekHeading">Early Literacy Starts at Birth</h3>
+        <p id="prekIntroOne">Children build the foundations for reading, writing, and lifelong learning long before kindergarten. Through play, everyday experiences, and meaningful connections, children communicate in many ways, including home languages, words, gestures, and expressions, while building confidence, relationships, and social-emotional skills in safe, nurturing environments.</p>
+        <p id="prekIntroTwo">In 3-K and Pre-K, early literacy is part of a broader, play-based curriculum that supports all areas of a child's learning and development. Children develop language and literacy as they play, explore, create, solve problems, talk, listen, draw, write, and share stories with others.</p>
+        <p id="prekActivitiesIntro">You can help your child learn and grow when you:</p>
+        <ul>
+          <li id="prekActivityOne">Connect, listen, and communicate through home languages, words, gestures, sounds, and expressions to share ideas, build language, and lay the foundation for reading and writing.</li>
+          <li id="prekActivityTwo">Sing songs and rhymes to help your child hear the sounds and patterns in words.</li>
+          <li id="prekActivityThree">Read books and tell stories together, sharing what you notice and wonder.</li>
+          <li id="prekActivityFour">Together, notice letters, symbols, and signs in books and the world around you.</li>
+          <li id="prekActivityFive">Play, pretend, create, and explore together to build language, knowledge, curiosity, and problem-solving.</li>
+          <li id="prekActivitySix">Encourage drawing, scribbling, making marks, and early writing as ways for your child to share ideas, tell stories, and communicate.</li>
+          <li id="prekActivitySeven">Use your home language through words, gestures, signs, songs, stories, and play to connect, communicate, and learn together.</li>
+        </ul>
+        <p id="prekClosing">Every child learns and grows in their own way. These everyday moments help build a strong foundation for reading and writing.</p>
+        <p><span id="prekResourcesIntro">Explore the books and resources below to find more ways to read, communicate, and learn together:</span> <a id="prekResourceLink" href="https://static1.squarespace.com/static/6a14f58b81e7ae70ef22efbb/t/6a9a59d31962e811c3634866/1788500435796/NYC+Reads+Together+Build+a+Routine+With+Your+Young+Reader.pdf" target="_blank" rel="noopener noreferrer">Pre-K/3K Build a Reading Routine</a>.</p>
+      </section>
+
+      <section id="prekReadingList" class="card section reading-list-card" aria-labelledby="readingListHeading" hidden>
+        <h2 id="readingListHeading">Reading List</h2>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Creators</th>
+                <th scope="col">ISBN</th>
+              </tr>
+            </thead>
+            <tbody id="readingListRows">
+              <tr><td colspan="3">Loading reading list…</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="reading-list-pagination" aria-label="Reading list pages">
+          <button id="readingListBack" type="button" class="btn btn-secondary" disabled>‹ Back</button>
+          <p id="readingListPageStatus" class="results-meta" aria-live="polite"></p>
+          <button id="readingListNext" type="button" class="btn btn-secondary" disabled>Next ›</button>
+        </div>
       </section>
 
       <div id="resultsDivider" class="divider" role="separator" aria-hidden="true"></div>
