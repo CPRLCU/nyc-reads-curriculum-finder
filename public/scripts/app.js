@@ -29,6 +29,7 @@
     prekProgramButton: document.getElementById('prekProgramButton'),
     filters: document.getElementById('filters'),
     prekResources: document.getElementById('prekResources'),
+    prekVideos: document.getElementById('prekVideos'),
     prekReadingList: document.getElementById('prekReadingList'),
     readingListRows: document.getElementById('readingListRows'),
     readingListBack: document.getElementById('readingListBack'),
@@ -89,6 +90,13 @@
       prekActivitySeven: 'Use your home language through words, gestures, signs, songs, stories, and play to connect, communicate, and learn together.',
       prekClosing: 'Every child learns and grows in their own way. These everyday moments help build a strong foundation for reading and writing.',
       prekResourcesIntro: 'Explore the books and resources below to find more ways to read, communicate, and learn together:',
+      prekVideoHeading: '5 Ready Transition to Kindergarten',
+      prekVideoIntro: "Scroll down and watch DECE's 5 Ready Transition to Kindergarten video series to learn more about preparing your child for their transition to kindergarten.",
+      prekVideoTitleOne: '5 Ready Transition to Kindergarten Series video 1',
+      prekVideoTitleTwo: '5 Ready Transition to Kindergarten Series video 2',
+      prekVideoTitleThree: '5 Ready Transition to Kindergarten Series video 3',
+      prekVideoChannelIntro: 'Check out the rest of the video series at the ',
+      prekVideoChannelName: 'DECE Family Engagement YouTube Channel',
       districtLabel: 'District',
       schoolLabel: 'School',
       schoolPlaceholder: 'Type to search schools…',
@@ -1058,6 +1066,18 @@
     setText('k8ProgramButton', t('k8Program'));
     setText('prekProgramButton', t('prekProgram'));
     setText('prekTitle', t('prekTitle'));
+    setText('prekVideoHeading', t('prekVideoHeading'));
+    setText('prekVideoIntro', t('prekVideoIntro'));
+    setText('prekVideoChannelIntro', t('prekVideoChannelIntro'));
+    setText('prekVideoChannelName', t('prekVideoChannelName'));
+    [
+      ['prekVideoOne', 'prekVideoTitleOne'],
+      ['prekVideoTwo', 'prekVideoTitleTwo'],
+      ['prekVideoThree', 'prekVideoTitleThree'],
+    ].forEach(([id, key]) => {
+      const video = document.getElementById(id);
+      if (video) video.title = t(key);
+    });
     setText('readingListHeading', t('readingList'));
     setText('prekResourceLink', t('prekLink'));
     setText('readingListBack', t('prevBtn'));
@@ -1917,6 +1937,7 @@
     }
     if (els.filters) els.filters.hidden = !isK8;
     if (els.prekResources) els.prekResources.hidden = isK8;
+    if (els.prekVideos) els.prekVideos.hidden = isK8;
     if (els.prekReadingList) els.prekReadingList.hidden = isK8;
     if (els.resultsDivider) els.resultsDivider.hidden = !isK8;
     if (els.results) els.results.hidden = !isK8;
